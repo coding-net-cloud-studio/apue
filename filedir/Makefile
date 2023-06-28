@@ -8,8 +8,11 @@ else
 	ZAP =
 endif
 
+# wmtag_memo_我修改了这里_开始
+# PROGS =	access cdpwd changemod devrdev filetype mycd umask unlink $(ZAP)
+PROGS =	access cdpwd changemod filetype mycd umask unlink $(ZAP)
+# wmtag_memo_我修改了这里_结束
 
-PROGS =	access cdpwd changemod devrdev filetype mycd umask unlink $(ZAP)
 MOREPROGS = ftw8
 
 all:	$(PROGS) $(MOREPROGS)
