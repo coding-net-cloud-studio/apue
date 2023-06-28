@@ -86,32 +86,44 @@ buffer_size(FILE *fp)
 
 #elif defined(_IONBF)
 
+/* # wmtag_memo_我修改了这里_开始 */
+/*
 #ifdef _LP64
 #define _flag __pad[4]
 #define _ptr __pad[1]
 #define _base __pad[2]
 #endif
+*/
+/* # wmtag_memo_我修改了这里_结束 */
 
 int
 is_unbuffered(FILE *fp)
 {
-	return(fp->_flag & _IONBF);
+	/* # wmtag_memo_我修改了这里_开始 */
+	return(fp->_flags & _IONBF);
+	/* # wmtag_memo_我修改了这里_结束 */
 }
 
 int
 is_linebuffered(FILE *fp)
 {
-	return(fp->_flag & _IOLBF);
+	/* # wmtag_memo_我修改了这里_开始 */
+	return(fp->_flags & _IOLBF);
+	/* # wmtag_memo_我修改了这里_结束 */
 }
 
 int
 buffer_size(FILE *fp)
 {
+
 #ifdef _LP64
-	return(fp->_base - fp->_ptr);
+	/* # wmtag_memo_我修改了这里_开始 */
+	return(fp->_IO_buf_end - fp->_IO_buf_base);
+	/* # wmtag_memo_我修改了这里_结束 */
 #else
 	return(BUFSIZ);	/* just a guess */
 #endif
+
 }
 
 #else

@@ -9,8 +9,8 @@ else
 endif
 
 # wmtag_memo_我修改了这里_开始
-# PROGS =	buf fgetsfputs getcharbug getcputc mkstemp tempfiles
-PROGS =	fgetsfputs getcharbug getcputc mkstemp tempfiles
+PROGS =	buf fgetsfputs getcharbug getcputc mkstemp tempfiles
+# PROGS =	fgetsfputs getcharbug getcputc mkstemp tempfiles
 # wmtag_memo_我修改了这里_结束
 
 all:	$(PROGS) $(MEMSTR)

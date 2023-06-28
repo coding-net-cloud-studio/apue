@@ -17,6 +17,8 @@ case `uname -s` in
 	apt update 
 	apt install -y lsof net-tools direnv strace 
 	apt install -y libbsd-dev
+	sudo cp include/apue.h /usr/include/
+	sudo cp lib/error.c /usr/include/ 
 	# wmtag_memo_我修改了这里_结束
 	;;
 "Darwin")
