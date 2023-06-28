@@ -10,7 +10,7 @@ all:
 	for i in $(DIRS); do \
 		(cd $$i && echo "making $$i" && $(MAKE) ) || exit 1; \
 	done
-	[[ -f $$(which cloudstudio) ]] && [[ -f lib/libapue.a ]] && cp lib/libapue.a /usr/lib
+	sudo cp lib/libapue.a /usr/lib
 
 clean:
 	for i in $(DIRS); do \
