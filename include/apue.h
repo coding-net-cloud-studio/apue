@@ -26,6 +26,10 @@
 #include <unistd.h>		/* for convenience */
 #include <signal.h>		/* for SIG_ERR */
 
+/* # wmtag_memo_我修改了这里_开始 */
+#include "error.h"
+/* # wmtag_memo_我修改了这里_结束 */
+
 #define	MAXLINE	4096			/* max line length */
 
 /*
