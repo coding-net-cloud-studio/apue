@@ -1,4 +1,7 @@
 #include "apue.h"
+/* # wmtag_memo_我修改了这里_开始 */
+#include <sys/sysmacros.h>
+/* # wmtag_memo_我修改了这里_结束 */
 #ifdef SOLARIS
 #include <sys/mkdev.h>
 #endif
