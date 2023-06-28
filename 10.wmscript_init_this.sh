@@ -7,19 +7,20 @@
 # (This is a kludge.  Gotta be a better way.)
 #
 
+# wmtag_memo_我修改了这里_开始
+[[ -f $(which cloudstudio) ]] && apt update 
+[[ -f $(which cloudstudio) ]] && apt install -y lsof net-tools direnv strace 
+[[ -f $(which cloudstudio) ]] && apt install -y libbsd-dev
+[[ -f $(which cloudstudio) ]] && cp include/apue.h /usr/include/
+[[ -f $(which cloudstudio) ]] && cp lib/error.c /usr/include/ 
+# wmtag_memo_我修改了这里_结束
+
 case `uname -s` in
 "FreeBSD")
 	PLATFORM="freebsd"
 	;;
 "Linux")
 	PLATFORM="linux"
-	# wmtag_memo_我修改了这里_开始
-	[[ -f $(which cloudstudio) ]] && apt update 
-	[[ -f $(which cloudstudio) ]] && apt install -y lsof net-tools direnv strace 
-	[[ -f $(which cloudstudio) ]] && apt install -y libbsd-dev
-	[[ -f $(which cloudstudio) ]] && cp include/apue.h /usr/include/
-	[[ -f $(which cloudstudio) ]] && cp lib/error.c /usr/include/ 
-	# wmtag_memo_我修改了这里_结束
 	;;
 "Darwin")
 	PLATFORM="macos"
