@@ -76,6 +76,12 @@ f27_38_install_some_vs_ext_quick(){
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  mads-hartmann.bash-ide-vscode     --force
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  vsls-contrib.codetour             --force
 
+	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-vscode.cpptools                 --force
+	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  llvm-vs-code-extensions.vscode-clangd --force
+
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-vscode.cmake-tools               --force
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  twxs.cmake                          --force
+
 	return 0
 }
 
@@ -99,7 +105,8 @@ f33_install_common_software_quick(){
 		lynx \
 		hugo \
 		flex \
-		make 
+		make \
+		gdb
 	
 	return 0
 }
