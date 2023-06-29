@@ -152,14 +152,31 @@ f92_main_cloudstudio(){
 
 	cd ${WMVAR_ALL_OLD_PWD}
 
+	export WMTAG_LOCK_FILE=~/w26.c10_41_38_cloud_studio_apue_3e_已经存在锁文件了_运行标记文件-wmgitignore.wmtag_lock.sh
+	echo -e "已经存在锁文件了_不再进行任何动作_1020" > ${WMTAG_LOCK_FILE}
+	echo -e "\n运行在 $(pwd)/${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]} 脚本的 ${FUNCNAME} 函数中 ${LINENO} 行\n" >> ${WMTAG_LOCK_FILE}
+	date '+%Y-%m-%d 日 %H:%M:%S 秒' >> ${WMTAG_LOCK_FILE}
+
 	return 0
 }
 
 all(){
+
+	# 锁文件的名称与位置
+	local WMTAG_LOCK_FILE=~/w26.c10_41_38_cloud_studio_apue_3e_已经存在锁文件了_运行标记文件-wmgitignore.wmtag_lock.sh
+
 	# 判断位于cloudstudio的工作空间中才会执行
 	if [[ -f $(which cloudstudio) ]]; then 
-		# 在腾云扣钉的cloudstudio工作空间中执行如下的函数
-		f92_main_cloudstudio()
+		# 在腾云扣钉的cloudstudio工作空间中
+
+		# 判断是否已经执行过至少1次
+		if [[ ! -f ${WMTAG_LOCK_FILE} ]]; then 
+			# 不存在锁文件_才会执行
+			f92_main_cloudstudio
+		else 
+			# 执行过了_就不再执行了
+			echo "已经执行过一次了_不会再次执行_cloudstudio工作空间中_apue_3e的初始化"
+		fi 
 	else
 		echo "没有处于cloudstudio工作空间中_不需要执行" 
 	fi 
