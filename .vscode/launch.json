@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "gcc_gdb_launch",
+            "type": "gcc",
+            "request": "launch",
+            "mode": "debug",
+            //当运行单个文件时{workspaceFolder}可改为{file}
+            "program": "${file}",
+            "env": {},
+            "args": [],
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal"
+        }
+    ]
+}
