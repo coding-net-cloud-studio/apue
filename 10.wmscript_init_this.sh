@@ -79,7 +79,10 @@ f27_38_install_some_vs_ext_quick(){
 	return 0
 }
 
+# 安装一些ubuntu环境下的_需要用到的_软件
 f33_install_common_software_quick(){
+
+	apt update
 
 	DEBIAN_FRONTEND='noninteractive' apt install -y \
 		sudo \
@@ -97,20 +100,26 @@ f33_install_common_software_quick(){
 		hugo \
 		flex \
 		make 
+	
+	return 0
 }
 
+	# 安装一些apue_3e构建_需要的软件_主要是libbsd-dev
 l35_apue_3e_install_some_software(){
-		DEBIAN_FRONTEND='noninteractive' apt install -y \
+
+	DEBIAN_FRONTEND='noninteractive' apt install -y \
 			libbsd-dev
+	return 0
 }
 
+# 把apue_3e的几个文件拷贝到需要的位置
 l39_apue_3e_copy_some_files(){
 	cp include/apue.h /usr/include/
 	cp lib/error.c /usr/include/ 
 }
 
-
-all(){
+# 在腾云扣钉的cloudstudio工作空间中执行如下的函数
+f92_main_cloudstudio(){
 
 	export WMVAR_ALL_OLD_PWD=$(pwd)
 
@@ -126,20 +135,34 @@ all(){
 
 	cd ${WMVAR_ALL_OLD_PWD}
 
+	# 安装一些ubuntu环境下的_需要用到的_软件
 	f33_install_common_software_quick
 
 	# 返回原始的目录
 	cd ${WMVAR_ALL_OLD_PWD}
 
-	# 进行环境整理工作
+	# 安装一些apue_3e构建_需要的软件_主要是libbsd-dev
 	l35_apue_3e_install_some_software
 
 	# 返回原始的目录
 	cd ${WMVAR_ALL_OLD_PWD}
 
+	# 把apue_3e的几个文件拷贝到需要的位置
 	l39_apue_3e_copy_some_files
 
 	cd ${WMVAR_ALL_OLD_PWD}
+
+	return 0
+}
+
+all(){
+	# 判断位于cloudstudio的工作空间中才会执行
+	if [[ -f $(which cloudstudio) ]]; then 
+		# 在腾云扣钉的cloudstudio工作空间中执行如下的函数
+		f92_main_cloudstudio()
+	else
+		echo "没有处于cloudstudio工作空间中_不需要执行" 
+	fi 
 
 	return 0
 }
