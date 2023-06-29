@@ -106,13 +106,34 @@ f33_install_common_software_quick(){
 		hugo \
 		flex \
 		make \
-		gdb
+		gdb \
+		bison \
+		nasm \
+		bear \
+		strace 
+	
+		# DEBIAN_FRONTEND='noninteractive' apt install -y rkhunter unhide sshpass
 	
 	return 0
 }
 
-	# 安装一些apue_3e构建_需要的软件_主要是libbsd-dev
-l35_apue_3e_install_some_software(){
+f36_install_gcc_10_versioin(){
+
+	apt install -y gcc-10 
+	apt install -y g++-10 
+
+	[ -f /usr/bin/gcc-9 ]  && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 120 
+	[ -f /usr/bin/gcc-10 ] && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 150
+	[ -f /usr/bin/g++-9 ]  && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 120
+	[ -f /usr/bin/g++-10 ] && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 150
+	
+}
+
+
+#==================================================================================================
+
+# 安装一些apue_3e构建_需要的软件_主要是libbsd-dev
+l37_apue_3e_install_some_software(){
 
 	DEBIAN_FRONTEND='noninteractive' apt install -y \
 			libbsd-dev
@@ -144,12 +165,13 @@ f92_main_cloudstudio(){
 
 	# 安装一些ubuntu环境下的_需要用到的_软件
 	f33_install_common_software_quick
+	f36_install_gcc_10_versioin
 
 	# 返回原始的目录
 	cd ${WMVAR_ALL_OLD_PWD}
 
 	# 安装一些apue_3e构建_需要的软件_主要是libbsd-dev
-	l35_apue_3e_install_some_software
+	l37_apue_3e_install_some_software
 
 	# 返回原始的目录
 	cd ${WMVAR_ALL_OLD_PWD}
