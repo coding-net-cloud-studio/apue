@@ -156,6 +156,7 @@ f92_main_cloudstudio(){
 	echo -e "已经存在锁文件了_不再进行任何动作_1020" > ${WMTAG_LOCK_FILE}
 	echo -e "\n运行在 $(pwd)/${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]} 脚本的 ${FUNCNAME} 函数中 ${LINENO} 行\n" >> ${WMTAG_LOCK_FILE}
 	date '+%Y-%m-%d 日 %H:%M:%S 秒' >> ${WMTAG_LOCK_FILE}
+	chmod +x ${WMTAG_LOCK_FILE}
 
 	return 0
 }
