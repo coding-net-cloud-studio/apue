@@ -7,4 +7,4 @@ For FAQs, updated source code, and the lost chapter, see http://www.apuebook.com
 Please direct questions, suggestions, and bug reports to sar@apuebook.com.
 
 Steve Rago
-January 2013
+January 2013 
