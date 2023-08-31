@@ -1,7 +1,9 @@
 >这里是我自己的一个学习笔记.  
 >我把自己的学习笔记开源了.  
+>希望给广大的考研学子有点帮助.  
 
 **下面是原始仓库的readme内容**  
+
 Read the file called DISCLAIMER.
 
 On Freebsd, type "gmake".
