@@ -13,6 +13,10 @@ all:
 	done
 	sudo cp lib/libapue.a /usr/lib
 
+.PHONY : init
+init:
+	-@bash 10.wmscript_init_this.sh
+
 .PHONY : build
 build:
 	for i in $(DIRS); do \
