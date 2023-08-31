@@ -84,6 +84,8 @@ f27_38_install_some_vs_ext_quick(){
 	# 代替为如下的简单方法
 
 	if [[ -f $(which cloudstudio) ]]; then 
+		# 安装c与c++的调试vscode扩展
+		# 位置大体类似 .vscode/ext01_ms-vscode.cpptools-1.17.5_linux-x64.vsix
 		if [[ $(find .vscode/ -name '*ms-vscode.cpptools*.vsix'| wc -l) -gt 0 ]]; then
 			# 提取出ms-vscode.cpptools扩展的文件名称
 			wmvar26_10_code_runner_file_name=$(basename $(find .vscode/ -name '*ms-vscode.cpptools*.vsix'| sort -V | tail -n 2 | head -n 1))
@@ -92,6 +94,32 @@ f27_38_install_some_vs_ext_quick(){
 		else 
 			echo "没有找到随着本git仓库携带的_ms-vscode.cpptools_扩展"
 		fi 
+
+		# 安装中文标点符号转英文标点符号的vscode扩展
+		# 位置大体类似 .vscode/ext06_buuug7.chinese-punctuation-to-english-1.1.0.vsix
+		if [[ $(find .vscode/ -name '*buuug7.chinese-punctuation*.vsix'| wc -l) -gt 0 ]]; then
+			# 提取出buuug7.chinese-punctuation扩展的文件名称
+			wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*buuug7.chinese-punctuation*.vsix'| sort -V | tail -n 2 | head -n 1))
+			# 判断是否是cloudstudio的环境
+			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
+		else 
+			echo "没有找到随着本git仓库携带的_buuug7.chinese-punctuation_扩展"
+		fi 
+
+		# 安装ut8变量与函数名的_中文输入助手_vscode扩展_是_吴烜(xuan三声)领导下开源的vscode扩展
+		# 属于中文代码快速补全
+		# 开源的git仓库地址如下 https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant.git 
+		# 位置大体类似 .vscode/ext10_CodeInChinese.ChineseInputAssistant-1.5.8.vsix
+		if [[ $(find .vscode/ -name '*CodeInChinese.ChineseInputAssistant*.vsix'| wc -l) -gt 0 ]]; then
+			# 提取出CodeInChinese.ChineseInputAssistant扩展的文件名称
+			wmvar26_30_code_runner_file_name=$(basename $(find .vscode/ -name '*CodeInChinese.ChineseInputAssistant*.vsix'| sort -V | tail -n 2 | head -n 1))
+			# 判断是否是cloudstudio的环境
+			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_30_code_runner_file_name} --force
+		else 
+			echo "没有找到随着本git仓库携带的_CodeInChinese.ChineseInputAssistant_扩展"
+		fi 
+
+
 	fi 
 
 	# 下面的扩展与ms-vscode.cpptools在调试的时候冲突_不要安装
