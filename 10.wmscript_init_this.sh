@@ -121,6 +121,7 @@ f33_install_common_software_quick(){
 		flex \
 		make \
 		gdb \
+		gdbserver \
 		bison \
 		nasm \
 		bear \
@@ -168,6 +169,9 @@ f92_main_cloudstudio(){
 	# 在cloudstudio环境中_更新_vscode的_用户_settings_文件
 	# 主要是设置cloud studio为"永不休眠"
 	f16_cs_vs_settings_user_update
+
+	# 设置一下git的配置
+	f20_linux_git_setting
 
 	# 返回原始的目录
 	cd ${WMVAR_ALL_OLD_PWD}
