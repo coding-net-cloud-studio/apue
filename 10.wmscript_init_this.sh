@@ -76,7 +76,21 @@ f27_38_install_some_vs_ext_quick(){
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  mads-hartmann.bash-ide-vscode     --force
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  vsls-contrib.codetour             --force
 
-	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-vscode.cpptools                 --force
+	# 下面的无法通过插件市场简单的安装上去了
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-vscode.cpptools                 --force
+	# 代替为如下的简单方法
+
+	if [[ -f $(which cloudstudio) ]]; then 
+		if [[ $(find .vscode/ -name '*ms-vscode.cpptools*.vsix'| wc -l) -gt 0 ]]; then
+			# 提取出ms-vscode.cpptools扩展的文件名称
+			wmvar26_10_code_runner_file_name=$(basename $(find .vscode/ -name '*ms-vscode.cpptools*.vsix'| sort -V | tail -n 2 | head -n 1))
+			# 判断是否是cloudstudio的环境
+			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_10_code_runner_file_name} --force
+		else 
+			echo "没有找到随着本git仓库携带的_ms-vscode.cpptools_扩展"
+		fi 
+	fi 
+
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  llvm-vs-code-extensions.vscode-clangd --force
 
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-vscode.cmake-tools               --force

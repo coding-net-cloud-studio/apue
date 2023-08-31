@@ -1,0 +1,10 @@
+# autoOpen: true
+# apps:
+#   - port: 5000
+#     run: make 3_在cloudstudio中_安装_vscode扩展 && echo "请重启动本cloudstudio工作空间" || echo "请重启动本cloudstudio工作空间" 
+#     root: .
+#     name: 我们一起Go_公告板
+#     # 请大家同我一样购买正版纸质书籍
+#     # 我在后继的_记录自己学习笔记过程中_需要用到_2019年人民邮电出版社_UNIX环境高级编程(第3版)_请大家去出版社旗舰店购买
+#     description: cloud_studio_学习笔记_书籍介绍_启动_公告板
+#     autoOpen: true
