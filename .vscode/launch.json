@@ -14,6 +14,7 @@
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
+            "preLaunchTask": "t12_构建_apue_3rd_学习笔记",
             "MIMode": "gdb",
             "setupCommands": [
                 {
@@ -27,7 +28,6 @@
                     "ignoreFailures": true
                 }
             ],
-            // "preLaunchTask": "C/C++: clang++ 生成活动文件"
         }
     ]
 }

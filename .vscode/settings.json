@@ -1,5 +1,10 @@
 {
-    "editor.mouseWheelZoom": true,
+    "mediaPreview.video.autoPlay":true,
+	"search.useIgnoreFiles":true,
+	"editor.fontSize": 20,
+	"editor.mouseWheelZoom": true,
+	"terminal.integrated.experimentalImageSupport": true,
+	"terminal.integrated.fontSize": 18,
     "go.inferGopath": false,
     "cloudstudio.autosleep": "no",
     "go.toolsManagement.autoUpdate": true,

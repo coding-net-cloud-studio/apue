@@ -23,7 +23,19 @@
                 "isDefault": true
             },
             "detail": "调试器生成的任务。"
-        }
+        },
+        {
+            "type": "shell",
+            "label": "t12_构建_apue_3rd_学习笔记",
+            "command": "make",
+            "args": [
+                "-f",
+                "${workspaceFolder}/Makefile",
+                "build"
+            ],
+            "options": {
+            }
+        },
     ],
     "version": "2.0.0"
 }
