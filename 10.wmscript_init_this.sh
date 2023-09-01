@@ -135,6 +135,18 @@ f27_38_install_some_vs_ext_quick(){
 			echo "没有找到随着本git仓库携带的_mauricedebeijer.presentation-buddy_扩展"
 		fi 
 
+		# 安装command-alias用于获得vscode内部与扩展的命令的全名
+		# https://marketplace.visualstudio.com/items?itemName=ArturoDent.command-alias
+		# 位置大体类似 .vscode/ext37_ArturoDent.command-alias-0.6.0.vsix
+		if [[ $(find .vscode/ -name '*ArturoDent.command-alias*.vsix'| wc -l) -gt 0 ]]; then
+			# 提取出ArturoDent.command-alias扩展的文件名称
+			wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*ArturoDent.command-alias*.vsix'| sort -V | tail -n 2 | head -n 1))
+			# 判断是否是cloudstudio的环境
+			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
+		else 
+			echo "没有找到随着本git仓库携带的_ArturoDent.command-alias_扩展"
+		fi 
+
 	fi 
 
 	# 下面的扩展与ms-vscode.cpptools在调试的时候冲突_不要安装

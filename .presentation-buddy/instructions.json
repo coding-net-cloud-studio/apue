@@ -16,8 +16,22 @@
         "path": "8042_wmtemp_src/calculator.js"
     },
     {
+        "type": "command",
+        "command": "cloudstudio.copySSHURL"
+    },
+    {
+        "type": "command",
+        "command": "editor.action.clipboardPasteAction"
+    },
+    {
+        "type": "goto",
+        "line": 4,
+        "column": 1
+    },
+    {
         "type": "typeText",
         "text": [
+            "\n",
             "// This code is typed by Presentation Buddy",
             "",
             "class 日期计算器 {",
@@ -30,7 +44,7 @@
     },
     {
         "type": "goto",
-        "line": 4,
+        "line": 8,
         "column": 1
     },
     {
