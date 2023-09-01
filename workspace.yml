@@ -1,0 +1,49 @@
+---
+version: "v1"
+image: "cloudstudio-devops-docker.pkg.coding.net/artifacts/workspace/full-1.0.0:2023-05-30.0721"
+envs:
+- name: "wmstudy_env"
+  value: "wmstudy_env_class_go_2023_09_fall"
+- name: "wmstudy_env_student_id"
+  value: "wmstudy_env_student_id_2023_09_12345678"
+extensions:
+- "formulahendry.code-runner@0.12.0"
+- "Sycl.markdown-command-runner@0.1.5"
+- "cloudstudio.tutorialkit@0.0.2"
+- "alefragnani.Bookmarks@13.0.1"
+- "ExodiusStudios.comment-anchors@1.9.6"
+- "ritwickdey.LiveServer@5.7.9"
+lifecycle:
+  init:
+  - name: "i10_init_install_ext"
+    command: "[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  formulahendry.code-runner\
+      \         --force"
+  - name: "i12_init_install_ext"
+    command: "[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  Sycl.markdown-command-runner\
+      \      --force"
+  - name: "i14_init_install_ext"
+    command: "[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ritwickdey.LiveServer\
+      \      --force"
+  - name: "i18_init_install_ext"
+    command: "[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  cloudstudio.tutorialkit\
+      \      --force"
+  - name: "i20_init_install_ext"
+    command: "[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  alefragnani.Bookmarks\
+      \      --force"
+  - name: "i22_init_install_ext"
+    command: "[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ExodiusStudios.comment-anchors\
+      \      --force"
+  - name: "i36_init_install_mysql_client"
+    command: "apt update && apt-get install -y mysql-client redis-tools"
+  - name: "i82_init_finish"
+    command: "touch ~/28_cs_i82_wmlock_init_finish_has_been_executed.md && date >>\
+      \ ~/28_cs_i82_wmlock_init_finish_has_been_executed.md "
+  start:
+  - name: "s82_start_finish"
+    command: "touch ~/29_cs_s82_wmlock_start_finish_has_been_executed.md && date >>\
+      \ ~/29_cs_s82_wmlock_start_finish_has_been_executed.md "
+  destroy:
+  - name: "d82_destroy_finish"
+    command: "touch ~/30_cs_d82_wmlock_destroy_finish_has_been_executed.md && date\
+      \ >> ~/30_cs_d82_wmlock_destroy_finish_has_been_executed.md "
+
