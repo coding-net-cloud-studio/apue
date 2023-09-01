@@ -35,7 +35,8 @@ f16_cs_vs_settings_user_update(){
 	"bookmarks.saveBookmarksInProject": true,
 	"Codegeex.Privacy": true,
 	"Codegeex.Survey": false,
-	"Codegeex.EnableExtension": false,
+	"Codegeex.EnableExtension": true,
+	"Codegeex.Explanation.LanguagePreference": "zh-CN",
 	"CS.CodeAssistant.EnableExtension": false,
 }
 EOF
