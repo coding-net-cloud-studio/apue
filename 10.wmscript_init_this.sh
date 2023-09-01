@@ -123,6 +123,17 @@ f27_38_install_some_vs_ext_quick(){
 			echo "没有找到随着本git仓库携带的_CodeInChinese.ChineseInputAssistant_扩展"
 		fi 
 
+		# 安装presentation-buddy用于协助codetour等控制学习笔记的演示过程
+		# https://marketplace.visualstudio.com/items?itemName=mauricedebeijer.presentation-buddy
+		# 位置大体类似 .vscode/ext22_mauricedebeijer.presentation-buddy-0.11.0.vsix
+		if [[ $(find .vscode/ -name '*mauricedebeijer.presentation-buddy*.vsix'| wc -l) -gt 0 ]]; then
+			# 提取出mauricedebeijer.presentation-buddy扩展的文件名称
+			wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*mauricedebeijer.presentation-buddy*.vsix'| sort -V | tail -n 2 | head -n 1))
+			# 判断是否是cloudstudio的环境
+			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
+		else 
+			echo "没有找到随着本git仓库携带的_mauricedebeijer.presentation-buddy_扩展"
+		fi 
 
 	fi 
 
