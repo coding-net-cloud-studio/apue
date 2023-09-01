@@ -1,20 +1,32 @@
 [
+    // {
+    //     "type": "openFile",
+    //     "path": ".tours/a98_飞天_中国航天站_等你来出差.mp4"
+    // },
+    // {
+    //     "type": "wait",
+    //     "delay": 20000
+    // },
+    // {
+    //     "type": "command",
+    //     "command": "workbench.action.closeActiveEditor"
+    // },
     {
         "type": "createFile",
-        "path": "src/calculator.js"
+        "path": "8042_wmtemp_src/calculator.js"
     },
     {
         "type": "typeText",
         "text": [
             "// This code is typed by Presentation Buddy",
             "",
-            "class Calculator {",
+            "class 日期计算器 {",
             "  add(x, y) {",
             "    return x + y;",
             "  }",
             "}"
         ],
-        "delay": 200
+        "delay": 50
     },
     {
         "type": "goto",
@@ -31,7 +43,28 @@
     },
     {
         "type": "createFile",
-        "path": "src/demo.js"
+        "path": "8042_wmtemp_src/30_读我.sh"
+    },
+    {
+        "type": "typeTextFromFile",
+        "path": "../README.md"
+    },
+    // {
+    //     "type": "wait",
+    //     "delay": "manual",
+    //     "save": true
+    // },
+    {
+        "type": "command",
+        "command": "workbench.action.files.save"
+    },
+    {
+        "type": "command",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "type": "createFile",
+        "path": "8042_wmtemp_src/demo.js"
     },
     {
         "type": "typeText",
@@ -47,7 +80,7 @@
     },
     {
         "type": "openFile",
-        "path": "src/calculator.js"
+        "path": "8042_wmtemp_src/calculator.js"
     },
     {
         "type": "command",
@@ -59,5 +92,9 @@
             "",
             "module.exports = Calculator;"
         ]
+    },
+    {
+        "type": "openFile",
+        "path": "8042_wmtemp_src/30_读我.sh"
     }
 ]
