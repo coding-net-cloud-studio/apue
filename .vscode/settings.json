@@ -1,10 +1,10 @@
 {
-    "mediaPreview.video.autoPlay":true,
-	"search.useIgnoreFiles":true,
-	"editor.fontSize": 20,
-	"editor.mouseWheelZoom": true,
-	"terminal.integrated.experimentalImageSupport": true,
-	"terminal.integrated.fontSize": 18,
+    "mediaPreview.video.autoPlay": true,
+    "search.useIgnoreFiles": true,
+    "editor.fontSize": 20,
+    "editor.mouseWheelZoom": true,
+    "terminal.integrated.experimentalImageSupport": true,
+    "terminal.integrated.fontSize": 18,
     "go.inferGopath": false,
     "cloudstudio.autosleep": "no",
     "go.toolsManagement.autoUpdate": true,
@@ -18,7 +18,6 @@
         "editor.snippetSuggestions": "none",
     },
     "[go.mod]": {
-    
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
@@ -32,19 +31,17 @@
         "staticcheck": false,
         // "experimentalWorkspaceModule": true,
     },
-    "go.testFlags":[
+    "go.testFlags": [
         "-v"
-      ],
-      "code-runner.fileDirectoryAsCwd": true,
-      "code-runner.runInTerminal": true,
-      "code-runner.executorMapByGlob": {
+    ],
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMapByGlob": {
         "Makefile": "cd $dir && make -f $fileName",
         "makefile": "cd $dir && make -f $fileName",
         "go.mod": "cd $dir && go mod download -x",
-      },
-      "code-runner.executorMapByFileExtension": {
-        
-
+    },
+    "code-runner.executorMapByFileExtension": {
         ".vb": "cd $dir && vbc /nologo $fileName && $dir$fileNameWithoutExt",
         ".vbs": "cscript //Nologo",
         ".scala": "scala",
@@ -81,9 +78,7 @@
     },
     "bookmarks.saveBookmarksInProject": true,
     "bookmarks.sideBar.expanded": true,
-    "bookmarks.useWorkaroundForFormatters": true
-
+    "bookmarks.useWorkaroundForFormatters": true,
+    "presentation-buddy.delay": 50,
+    "presentation-buddy.randomness": 20
 }
-
-
-
