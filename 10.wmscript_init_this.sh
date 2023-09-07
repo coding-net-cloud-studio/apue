@@ -84,6 +84,16 @@ f27_38_install_some_vs_ext_quick(){
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  Sycl.markdown-command-runner      --force
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  CloudStudio.tutorialkit           --force
 
+	# NOTE 下面是应对cloudstudio最近把all in one工作空间中所有的vscode扩展都删掉带来的问题_增加的部分
+	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-python.python   					--force
+
+	# 下面的来自openvsx社区的jupyter破裂了只能手工的安装
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-toolsai.jupyter   					--force
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-toolsai.jupyter-keymap   			--force
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-toolsai.jupyter-renderers   		--force
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-toolsai.vscode-jupyter-cell-tags   --force
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-toolsai.vscode-jupyter-slideshow   --force
+
 	# 下面的无法通过插件市场简单的安装上去了
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-vscode.cpptools                 --force
 	# 代替为如下的简单方法
@@ -134,6 +144,17 @@ f27_38_install_some_vs_ext_quick(){
 			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
 		else 
 			echo "没有找到随着本git仓库携带的_mauricedebeijer.presentation-buddy_扩展"
+		fi 
+
+		# 安装数据分析所用的jupyter_notebook的vscode扩展
+		# 位置大体类似 .vscode/ext26_ms-toolsai.jupyter-2023.5.1101742258.vsix
+		if [[ $(find .vscode/ -name '*ms-toolsai.jupyter*.vsix'| wc -l) -gt 0 ]]; then
+			# 提取出ms-toolsai.jupyter扩展的文件名称
+			wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*ms-toolsai.jupyter*.vsix'| sort -V | tail -n 2 | head -n 1))
+			# 判断是否是cloudstudio的环境
+			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
+		else 
+			echo "没有找到随着本git仓库携带的_ms-toolsai.jupyter_扩展"
 		fi 
 
 		# 安装command-alias用于获得vscode内部与扩展的命令的全名
