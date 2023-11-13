@@ -249,6 +249,14 @@ l39_apue_3e_copy_some_files(){
 	cp lib/error.c /usr/include/ 
 }
 
+# 把apue_3e的几个文件shell与awk文件确认变为可执行
+l42_apue_3e_chmod_some_files(){
+
+	find . -name "*.sh" -exec chmod +x {} \;
+	find . -name "*.awk" -exec chmod +x {} \;
+
+}
+
 # 在腾云扣钉的cloudstudio工作空间中执行如下的函数
 f92_main_cloudstudio(){
 
@@ -284,6 +292,9 @@ f92_main_cloudstudio(){
 
 	# 把apue_3e的几个文件拷贝到需要的位置
 	l39_apue_3e_copy_some_files
+
+	# 把apue_3e的几个文件shell与awk文件确认变为可执行
+	l42_apue_3e_chmod_some_files
 
 	cd ${WMVAR_ALL_OLD_PWD}
 
