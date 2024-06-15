@@ -80,5 +80,10 @@
     "bookmarks.sideBar.expanded": true,
     "bookmarks.useWorkaroundForFormatters": true,
     "presentation-buddy.delay": 50,
-    "presentation-buddy.randomness": 20
+    "presentation-buddy.randomness": 20,
+    "[go][go.mod]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    }
 }
