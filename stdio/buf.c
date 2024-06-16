@@ -1,43 +1,41 @@
 #include "apue.h"
 
-void	pr_stdio(const char *, FILE *);
-int		is_unbuffered(FILE *);
-int		is_linebuffered(FILE *);
-int		buffer_size(FILE *);
+void pr_stdio(const char *, FILE *);
+int  is_unbuffered(FILE *);
+int  is_linebuffered(FILE *);
+int  buffer_size(FILE *);
 
-int
-main(void)
+int main(void)
 {
-	FILE	*fp;
+    FILE *fp;
 
-	fputs("enter any character\n", stdout);
-	if (getchar() == EOF)
-		err_sys("getchar error");
-	fputs("one line to standard error\n", stderr);
+    fputs("enter any character\n", stdout);
+    if (getchar() == EOF)
+        err_sys("getchar error");
+    fputs("one line to standard error\n", stderr);
 
-	pr_stdio("stdin",  stdin);
-	pr_stdio("stdout", stdout);
-	pr_stdio("stderr", stderr);
+    pr_stdio("stdin", stdin);
+    pr_stdio("stdout", stdout);
+    pr_stdio("stderr", stderr);
 
-	if ((fp = fopen("/etc/passwd", "r")) == NULL)
-		err_sys("fopen error");
-	if (getc(fp) == EOF)
-		err_sys("getc error");
-	pr_stdio("/etc/passwd", fp);
-	exit(0);
+    if ((fp = fopen("/etc/passwd", "r")) == NULL)
+        err_sys("fopen error");
+    if (getc(fp) == EOF)
+        err_sys("getc error");
+    pr_stdio("/etc/passwd", fp);
+    exit(0);
 }
 
-void
-pr_stdio(const char *name, FILE *fp)
+void pr_stdio(const char *name, FILE *fp)
 {
-	printf("stream = %s, ", name);
-	if (is_unbuffered(fp))
-		printf("unbuffered");
-	else if (is_linebuffered(fp))
-		printf("line buffered");
-	else /* if neither of above */
-		printf("fully buffered");
-	printf(", buffer size = %d\n", buffer_size(fp));
+    printf("stream = %s, ", name);
+    if (is_unbuffered(fp))
+        printf("unbuffered");
+    else if (is_linebuffered(fp))
+        printf("line buffered");
+    else /* if neither of above */
+        printf("fully buffered");
+    printf(", buffer size = %d\n", buffer_size(fp));
 }
 
 /*
@@ -46,42 +44,36 @@ pr_stdio(const char *name, FILE *fp)
 
 #if defined(_IO_UNBUFFERED)
 
-int
-is_unbuffered(FILE *fp)
+int is_unbuffered(FILE *fp)
 {
-	return(fp->_flags & _IO_UNBUFFERED);
+    return (fp->_flags & _IO_UNBUFFERED);
 }
 
-int
-is_linebuffered(FILE *fp)
+int is_linebuffered(FILE *fp)
 {
-	return(fp->_flags & _IO_LINE_BUF);
+    return (fp->_flags & _IO_LINE_BUF);
 }
 
-int
-buffer_size(FILE *fp)
+int buffer_size(FILE *fp)
 {
-	return(fp->_IO_buf_end - fp->_IO_buf_base);
+    return (fp->_IO_buf_end - fp->_IO_buf_base);
 }
 
 #elif defined(__SNBF)
 
-int
-is_unbuffered(FILE *fp)
+int is_unbuffered(FILE *fp)
 {
-	return(fp->_flags & __SNBF);
+    return (fp->_flags & __SNBF);
 }
 
-int
-is_linebuffered(FILE *fp)
+int is_linebuffered(FILE *fp)
 {
-	return(fp->_flags & __SLBF);
+    return (fp->_flags & __SLBF);
 }
 
-int
-buffer_size(FILE *fp)
+int buffer_size(FILE *fp)
 {
-	return(fp->_bf._size);
+    return (fp->_bf._size);
 }
 
 #elif defined(_IONBF)
@@ -96,34 +88,30 @@ buffer_size(FILE *fp)
 */
 /* # wmtag_memo_我修改了这里_结束 */
 
-int
-is_unbuffered(FILE *fp)
+int is_unbuffered(FILE *fp)
 {
-	/* # wmtag_memo_我修改了这里_开始 */
-	return(fp->_flags & _IONBF);
-	/* # wmtag_memo_我修改了这里_结束 */
+    /* # wmtag_memo_我修改了这里_开始 */
+    return (fp->_flags & _IONBF);
+    /* # wmtag_memo_我修改了这里_结束 */
 }
 
-int
-is_linebuffered(FILE *fp)
+int is_linebuffered(FILE *fp)
 {
-	/* # wmtag_memo_我修改了这里_开始 */
-	return(fp->_flags & _IOLBF);
-	/* # wmtag_memo_我修改了这里_结束 */
+    /* # wmtag_memo_我修改了这里_开始 */
+    return (fp->_flags & _IOLBF);
+    /* # wmtag_memo_我修改了这里_结束 */
 }
 
-int
-buffer_size(FILE *fp)
+int buffer_size(FILE *fp)
 {
 
 #ifdef _LP64
-	/* # wmtag_memo_我修改了这里_开始 */
-	return(fp->_IO_buf_end - fp->_IO_buf_base);
-	/* # wmtag_memo_我修改了这里_结束 */
+    /* # wmtag_memo_我修改了这里_开始 */
+    return (fp->_IO_buf_end - fp->_IO_buf_base);
+    /* # wmtag_memo_我修改了这里_结束 */
 #else
-	return(BUFSIZ);	/* just a guess */
+    return (BUFSIZ); /* just a guess */
 #endif
-
 }
 
 #else
