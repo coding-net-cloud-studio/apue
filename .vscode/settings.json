@@ -109,5 +109,9 @@
         ".presentation-buddy"
     ],
     "formatFiles.extensionsToInclude": "c, h, ts, js, json",
-    "formatFiles.excludePattern": "md,hdnb"
+    "formatFiles.excludePattern": "md,hdnb",
+    "files.exclude": {
+        "**/*.o": true,
+        "**/*.a": true
+      }
 }

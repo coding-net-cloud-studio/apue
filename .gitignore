@@ -28,3 +28,5 @@
 *wmbin_out*
 *wmbin_out*/
 
+*.o
+*.a
