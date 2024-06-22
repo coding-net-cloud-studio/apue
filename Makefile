@@ -1,7 +1,7 @@
 #! /usr/bin/make -f
 
 # 下面一行的定义_对于echo -e模式正确输出是必须的
-SHELL=/bin/bash 
+SHELL=/bin/bash
 
 DIRS = lib intro sockets advio daemons datafiles db environ \
 	fileio filedir ipc1 ipc2 proc pty relation signals standards \
@@ -9,11 +9,11 @@ DIRS = lib intro sockets advio daemons datafiles db environ \
 
 # -----------------------------------------------------------------------
 # 这里是缺省构建目标_只是_展示帮助信息
-default: help 
+default: help
 
 # -----------------------------------------------------------------------
 
-.PHONY : all 
+.PHONY : all
 all:
 	@# wmtag_memo_我修改了这里_开始
 	@# 安装了点需要用的软件与库文件
@@ -38,7 +38,7 @@ build:
 	done
 	sudo cp lib/libapue.a /usr/lib
 
-.PHONY : clean 
+.PHONY : clean
 clean:
 	for i in $(DIRS); do \
 		(cd $$i && echo "cleaning $$i" && $(MAKE) clean) || exit 1; \
@@ -60,6 +60,7 @@ help:
 	@echo -e "make 2_init                                    : 本目标只是在cloudstudio工作空间中运行_只需要运行1次就可以了"
 	@echo -e "make 3_build_all                               : 开始干活_构建本_考研_学习笔记_的所有源文件"
 	@echo -e "make 4_查看构建结果                            : 查看查看_查看是否已经构建出可执行文件"
+	@echo -e "make 5_show                                    : 用git clean -xdf -n 查看是否已经构建出可执行文件"
 	@echo -e "make 7_clean_all                               : 打扫卫生_清除上面构建出来的所有可执行目标文件"
 	@echo -e "\n\n"
 	@exit 0
@@ -80,14 +81,14 @@ help:
 
 # -----------------------------------------------------------------------
 
-.PHONY : 2_init cs 
+.PHONY : 2_init cs
 # 下面是别名
-2_init: init 
+2_init: init
 	-@echo -e "$$(pwd)/Makefile wmtask_[2_init]_目标_被运行\n"
 	-@exit 0
 
 # 下面是别名
-cs: init 
+cs: init
 	-@echo -e "$$(pwd)/Makefile wmtask_[2_init]_目标_被运行\n"
 	-@exit 0
 
@@ -95,23 +96,30 @@ cs: init
 
 .PHONY : 3_build_all
 # 下面是别名
-3_build_all: build 
+3_build_all: build
 	-@echo -e "$$(pwd)/Makefile wmtask_[3_build_all]_目标_被运行\n"
 	-@exit 0
 
 # -----------------------------------------------------------------------
 .PHONY : 4_查看构建结果
-4_查看构建结果: 
+4_查看构建结果:
 	-@echo -e "$$(pwd)/Makefile wmtask_[4_查看构建结果]_目标_被运行\n"
 	-@git status
 	-@exit 0
 
 # -----------------------------------------------------------------------
+.PHONY : 5_show
+5_show:
+	-@echo -e "$$(pwd)/Makefile wmtask_[5_show]_目标_被运行\n"
+	-@git clean -xdf -n
+	-@exit 0
+
+# -----------------------------------------------------------------------
 
 .PHONY : 7_clean_all
-7_clean_all: clean 
+7_clean_all: clean
 	-@echo -e "$$(pwd)/Makefile wmtask_[7_clean_all]_目标_被运行\n"
-	-@git clean -xdf -n 
+	-@git clean -xdf -n
 	-@exit 0
 
 # -----------------------------------------------------------------------
