@@ -55,14 +55,29 @@ int main(int argc, char *argv[])
         set_fl(fd, O_NONBLOCK);  // 设置文件描述符为非阻塞模式
 
         // 尝试对已加锁的区域加读锁,预期失败
-        if (read_lock(fd, 0, SEEK_SET, 0) != -1) /* no wait */
+        // mandatory.c
+
+        // 尝试对已锁定的区域进行读锁定
+        if (read_lock(fd, 0, SEEK_SET, 0) != -1)
+        { /* no wait */
+            // 如果成功锁定,打印错误信息,因为不应该成功
             err_sys("child: read_lock succeeded");
-        printf("read_lock of already-locked region returns %d\n",
-               errno);
+        }
+        // 打印尝试锁定已锁定区域的返回值,通常是errno
+        printf("read_lock of already-locked region returns %d\n", errno);
 
         // 尝试读取文件,预期因强制锁而失败
+        // 以下代码段用于检查文件是否支持强制锁定
+        // 如果支持,将无法读取文件的前两个字节;如果不支持,可以成功读取
+
+        // 使用lseek函数将文件指针移动到文件开头
+        // 如果失败,调用err_sys函数报告错误
         if (lseek(fd, 0, SEEK_SET) == -1)
             err_sys("lseek error");
+
+        // 尝试读取文件的前两个字节
+        // 如果读取的字节数小于0,表示强制锁定生效,调用err_ret函数报告错误
+        // 否则,打印读取成功的信息以及读取到的内容
         if (read(fd, buf, 2) < 0)
             err_ret("read failed (mandatory locking works)");
         else

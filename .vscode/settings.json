@@ -250,5 +250,8 @@
         "threads/threadid": true,
         "threads/timedlock": true,
         
-      }
+    },
+    "files.associations": {
+        "*.in_wmraw_英文版": "c"
+    }
 }
