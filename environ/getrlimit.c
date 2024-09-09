@@ -28,7 +28,7 @@ int main(void)
 #endif
 
 #ifdef RLIMIT_NICE
-    doit(RLIMIT_Nice);  // 进程优先级限制
+    doit(RLIMIT_NICE);  // 进程优先级限制
 #endif
 
     doit(RLIMIT_NOFILE);  // 打开文件描述符数量限制
