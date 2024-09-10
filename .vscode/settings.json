@@ -252,6 +252,7 @@
         
     },
     "files.associations": {
-        "*.in_wmraw_英文版": "c"
+        "*.in_wmraw_英文版": "c",
+        "fcntl.h": "c"
     }
 }
