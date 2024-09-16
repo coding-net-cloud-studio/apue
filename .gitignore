@@ -41,6 +41,7 @@ advio/rot13c2.c
 advio/xlate
 datafiles/strftime
 db/libapue_db.so
+db/libapue.db.so
 db/libapue_db.so.1
 db/t4
 environ/doatexit
