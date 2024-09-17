@@ -3,7 +3,7 @@
 #include <stdlib.h>  // 包含标准库函数的头文件
 #include <unistd.h>  // 包含Unix系统调用函数的头文件
 
-/// @brief POSIX风格的abort()函数,用于异常退出程序
+// @brief POSIX风格的abort()函数,用于异常退出程序
 void abort(void)
 {
     sigset_t         mask;    // 信号集,用于管理信号屏蔽

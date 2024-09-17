@@ -1,9 +1,9 @@
 #include <sys/time.h>
 #include <stdlib.h>
 
-/// @brief 计算并设置超时时间
-/// @param tsp 指向timespec结构体的指针,用于存储计算后的超时时间
-/// @param minutes 要添加的分钟数
+// @brief 计算并设置超时时间
+// @param tsp 指向timespec结构体的指针,用于存储计算后的超时时间
+// @param minutes 要添加的分钟数
 void maketimeout(struct timespec *tsp, long minutes)
 {
     struct timeval now;

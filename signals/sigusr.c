@@ -2,9 +2,9 @@
 
 static void sig_usr(int); /* one handler for both signals */
 
-/// <summary>
-/// 主函数,设置信号处理函数并进入无限循环等待信号
-/// </summary>
+// <summary>
+// 主函数,设置信号处理函数并进入无限循环等待信号
+// </summary>
 int main(void)
 {
     // 设置SIGUSR1信号的处理函数为sig_usr

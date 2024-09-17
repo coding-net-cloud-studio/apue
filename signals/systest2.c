@@ -1,21 +1,21 @@
 #include "apue.h"
 
-/// <summary>
-/// 处理中断信号(SIGINT)的函数.
-/// 当程序收到中断信号时,会调用此函数并打印消息.
-/// </summary>
-/// <param name="signo">接收到的信号编号.</param>
+// <summary>
+// 处理中断信号(SIGINT)的函数.
+// 当程序收到中断信号时,会调用此函数并打印消息.
+// </summary>
+// <param name="signo">接收到的信号编号.</param>
 static void
 sig_int(int signo)
 {
     printf("caught SIGINT\n");
 }
 
-/// <summary>
-/// 处理子进程结束信号(SIGCHLD)的函数.
-/// 当程序收到子进程结束信号时,会调用此函数并打印消息.
-/// </summary>
-/// <param name="signo">接收到的信号编号.</param>
+// <summary>
+// 处理子进程结束信号(SIGCHLD)的函数.
+// 当程序收到子进程结束信号时,会调用此函数并打印消息.
+// </summary>
+// <param name="signo">接收到的信号编号.</param>
 static void
 sig_chld(int signo)
 {

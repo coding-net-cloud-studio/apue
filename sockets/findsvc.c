@@ -12,8 +12,8 @@
 // 注意:代码中存在一个预处理指令 #endif,它似乎没有与之匹配的 #if 或 #ifdef.
 // 这可能是一个错误,应该检查并修正以确保预处理指令的正确配对.
 
-/// 打印地址信息家族类型
-/// @param aip 指向addrinfo结构体的指针
+// 打印地址信息家族类型
+// @param aip 指向addrinfo结构体的指针
 void print_family(struct addrinfo *aip)
 {
     printf(" family ");  // 打印提示信息

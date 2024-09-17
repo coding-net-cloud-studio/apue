@@ -1,8 +1,8 @@
 #include "apue.h"
 
-/// @brief 主函数,用于打印命令行参数
-/// @param argc 命令行参数的数量
-/// @param argv 指向命令行参数的指针数组
+// @brief 主函数,用于打印命令行参数
+// @param argc 命令行参数的数量
+// @param argv 指向命令行参数的指针数组
 int main(int argc, char *argv[])
 {
     int i;  // 循环变量

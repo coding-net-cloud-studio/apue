@@ -1,9 +1,9 @@
 #include "apue.h"
 
-/// <summary>
-/// 信号处理函数,用于处理 SIGQUIT 信号
-/// </summary>
-/// <param name="signo">接收到的信号编号</param>
+// <summary>
+// 信号处理函数,用于处理 SIGQUIT 信号
+// </summary>
+// <param name="signo">接收到的信号编号</param>
 static void sig_quit(int signo);
 
 int main(void)

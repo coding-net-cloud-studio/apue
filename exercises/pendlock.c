@@ -2,8 +2,8 @@
 #include <fcntl.h>  // 引入文件控制相关的头文件
 #include <errno.h>  // 引入错误处理相关的头文件
 
-/// @brief 信号处理函数,用于处理中断信号
-/// @param signo 接收到的信号编号
+// @brief 信号处理函数,用于处理中断信号
+// @param signo 接收到的信号编号
 void sigint(int signo)
 {
     // 函数体为空,可能是用于后续添加信号处理逻辑
