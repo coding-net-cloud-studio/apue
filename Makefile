@@ -5,7 +5,8 @@ SHELL=/bin/bash
 
 DIRS = lib intro sockets advio daemons datafiles db environ \
 	fileio filedir ipc1 ipc2 proc pty relation signals standards \
-	stdio termios threadctl threads printer exercises
+	stdio termios threadctl threads printer exercises \
+	cf_figlinks
 
 # -----------------------------------------------------------------------
 # 这里是缺省构建目标_只是_展示帮助信息
