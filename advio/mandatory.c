@@ -1,7 +1,8 @@
-#include "apue.h"
-#include <errno.h>
-#include <fcntl.h>
-#include <sys/wait.h>
+#include "apue.h"      // 引入APUE库,提供系统编程接口
+#include <errno.h>     // 引入错误处理头文件,定义了errno变量和各种错误代码
+#include <fcntl.h>     // 引入文件控制操作头文件,如open, fcntl等函数
+#include <sys/wait.h>  // 引入进程等待头文件,提供wait和waitpid函数
+
 
 int main(int argc, char *argv[])
 {
