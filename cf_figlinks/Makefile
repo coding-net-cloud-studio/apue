@@ -42,11 +42,20 @@ PROGS = fig8.17 figC.12 fig8.1 fig1.9 fig12.16 fig7.16 fig17.4 fig3.2 figC.8 fig
 
 
 # 有问题的 
-# fig11.16.c fig17.21.c fig7.11.c fig20.3.c fig13.7.c fig17.18.c figC.24.c 
+OTHER = fig11.16
+# 注意_需要把c的后缀给去掉
+
+# fig17.21.c fig7.11.c fig20.3.c fig13.7.c fig17.18.c figC.24.c 
+# fig16.16.c fig16.20.c fig16.17.c fig5.11.c fig17.28.c fig10.9.c
+# fig19.11.c fig13.8.c fig12.8.c fig12.8.c fig16.18.c fig4.25.c
+
+# 备份的内容
+# fig17.21.c fig7.11.c fig20.3.c fig13.7.c fig17.18.c figC.24.c 
 # fig16.16.c fig16.20.c fig16.17.c fig5.11.c fig17.28.c fig10.9.c
 # fig19.11.c fig13.8.c fig12.8.c fig12.8.c fig16.18.c fig4.25.c
 
 # 默认目标,编译所有程序
+# all: $(PROGS) $(OTHER)
 all: $(PROGS)
 
 
@@ -55,6 +64,13 @@ all: $(PROGS)
 # 编译 PROGS 列表中的每个程序
 # 使用 LIBAPUE 库,编译对应的 .c 文件并链接生成可执行文件
 $(PROGS):	$(LIBAPUE)
+	$(CC) $(CFLAGS) $@.c -o $@ $(LDFLAGS) $(LDLIBS)
+
+other: $(OTHER)
+
+# 编译 PROGS 列表中的每个程序
+# 使用 LIBAPUE 库,编译对应的 .c 文件并链接生成可执行文件
+$(OTHER):	$(LIBAPUE)
 	$(CC) $(CFLAGS) $@.c -o $@ $(LDFLAGS) $(LDLIBS)
 
 # 清理生成的文件
