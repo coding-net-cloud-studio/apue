@@ -1,8 +1,8 @@
 #include "apue.h"
 #include <sys/time.h>
 
-/// @brief 使当前进程休眠指定的微秒数
-/// @param nusecs 需要休眠的微秒数
+// @brief 使当前进程休眠指定的微秒数
+// @param nusecs 需要休眠的微秒数
 void sleep_us(unsigned int nusecs)
 {
     struct timeval tval;  // 定义一个timeval结构体用于存储时间值

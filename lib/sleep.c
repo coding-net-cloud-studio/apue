@@ -1,11 +1,11 @@
 #include "apue.h"
 
-/// <summary>
-/// 信号处理函数,用于处理闹钟信号.
-/// 当接收到闹钟信号时,此函数会被调用.
-/// 目前函数体为空,仅通过返回来唤醒sigsuspend()函数.
-/// </summary>
-/// <param name="signo">接收到的信号编号</param>
+// <summary>
+// 信号处理函数,用于处理闹钟信号.
+// 当接收到闹钟信号时,此函数会被调用.
+// 目前函数体为空,仅通过返回来唤醒sigsuspend()函数.
+// </summary>
+// <param name="signo">接收到的信号编号</param>
 static void
 sig_alrm(int signo)
 {
