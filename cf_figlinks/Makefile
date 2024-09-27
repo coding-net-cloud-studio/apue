@@ -42,12 +42,13 @@ PROGS = fig8.17 figC.12 fig8.1 fig1.9 fig12.16 fig7.16 fig17.4 fig3.2 figC.8 fig
 
 
 # 有问题的 
-OTHER =  fig17.21
+# fig17.21
+OTHER =  
 # 注意_需要把c的后缀给去掉
 # fig11.16
-# fig7.11.c fig20.3.c fig13.7.c fig17.18.c figC.24.c 
-# fig16.16.c fig16.20.c fig16.17.c fig5.11.c fig17.28.c fig10.9.c
-# fig19.11.c fig13.8.c fig12.8.c fig12.8.c fig16.18.c fig4.25.c
+# fig7.11 fig20.3 fig13.7 fig17.18 figC.24 
+# fig16.16 fig16.20 fig16.17 fig5.11 fig17.28 fig10.9
+# fig19.11 fig13.8 fig12.8 fig12.8 fig16.18 fig4.25
 
 # 备份的内容
 # fig17.21.c fig7.11.c fig20.3.c fig13.7.c fig17.18.c figC.24.c 
