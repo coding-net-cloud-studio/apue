@@ -59,7 +59,7 @@ OTHER =  fig7.11
 # all: $(PROGS) $(OTHER)
 # all: clean git_add $(PROGS)
 # all: $(PROGS) $(OTHER)
-all: none
+all: build_none_main_object
 
 
 # PROGS: $(PROGS10) $(PROGS20) $(PROGS30) $(PROGS40) $(PROGS50) $(PROGS60) $(PROGS70) $(PROGS80) $(PROGS90) $(PROGSA0) $(PROGSB0) $(PROGSC0) $(PROGSD0) $(PROGSE0)
@@ -81,12 +81,12 @@ NONE_MAIN_SRC = fig10.12.c  fig10.8.c   fig12.4.c   fig15.35.c  fig17.14.c  fig1
 
 NONE_MAIN_OBJECT = fig10.12.o  fig10.8.o   fig12.4.o   fig15.35.o  fig17.14.o  fig17.25.o  fig18.12.o  fig2.16.o  figB.4.o fig10.14.o  fig11.10.o  fig13.1.o   fig15.7.o   fig17.15.o  fig17.26.o  fig18.13.o  fig2.17.o  figC.13.o fig10.18.o  fig11.11.o  fig13.6.o   fig16.10.o  fig17.16.o  fig17.27.o  fig18.15.o  fig3.12.o  figC.16.o fig10.19.o  fig11.12.o  fig13.9.o   fig16.11.o  fig17.17.o  fig17.29.o  fig18.17.o  fig6.2.o   figC.17.o fig10.24.o  fig11.14.o  fig14.24.o  fig16.12.o  fig17.19.o  fig17.2.o   fig18.20.o  fig7.14.o  figC.1.o fig10.25.o  fig11.15.o  fig14.5.o   fig16.22.o  fig17.20.o  fig17.30.o  fig19.10.o  fig8.22.o  figC.23.o fig10.28.o  fig12.11.o  fig14.6.o   fig17.10.o  fig17.22.o  fig17.31.o  fig19.12.o  fig8.5.o   figC.4.o fig10.29.o  fig12.12.o  fig14.9.o   fig17.12.o  fig17.23.o  fig17.8.o   fig19.16.o  figB.1.o fig10.7.o   fig12.13.o  fig15.12.o  fig17.13.o  fig17.24.o  fig17.9.o   fig19.9.o   figB.3.o
 
-NONE_MAIN =   fig10.8   fig12.4     fig17.14  fig17.25  fig18.12  fig2.16  figB.4 fig10.14  fig11.10  fig13.1   fig15.7   fig17.15  fig17.26  fig18.13  fig2.17  figC.13 fig10.18  fig11.11  fig13.6   fig16.10  fig17.16  fig17.27  fig18.15  fig3.12  figC.16 fig10.19  fig11.12  fig13.9   fig16.11  fig17.17  fig17.29  fig18.17  fig6.2   figC.17 fig10.24  fig11.14  fig14.24  fig16.12  fig17.19  fig17.2   fig18.20  fig7.14  figC.1 fig10.25  fig11.15  fig14.5   fig16.22  fig17.20  fig17.30  fig19.10  fig8.22  figC.23 fig10.28  fig12.11  fig14.6   fig17.10  fig17.22  fig17.31  fig19.12  fig8.5   figC.4 fig10.29  fig12.12  fig14.9   fig17.12  fig17.23  fig17.8   fig19.16  figB.1 fig10.7   fig12.13  fig15.12  fig17.13  fig17.24  fig17.9   fig19.9   figB.3
+NONE_MAIN =   fig10.8   fig12.4     fig17.14  fig18.12  fig2.16  figB.4 fig10.14  fig11.10  fig13.1   fig15.7   fig17.15  fig17.26  fig18.13  fig2.17  figC.13 fig10.18  fig11.11  fig13.6   fig16.10  fig17.16 fig18.15  fig3.12  figC.16 fig10.19  fig11.12  fig13.9   fig16.11  fig17.17  fig17.29  fig18.17  fig6.2   figC.17 fig10.24  fig11.14  fig14.24  fig16.12  fig17.19  fig17.2   fig18.20  fig7.14  figC.1 fig10.25  fig11.15  fig14.5   fig16.22  fig17.20  fig17.30  fig19.10  fig8.22  figC.23 fig10.28  fig12.11  fig14.6   fig17.10    fig17.31  fig19.12  fig8.5    fig10.29  fig12.12  fig14.9   fig17.12  fig17.23  fig17.8   fig19.16  figB.1 fig10.7   fig12.13  fig15.12  fig17.13  fig17.24  fig17.9   fig19.9   figB.3
 
 # 有问题的
-# fig10.12 fig15.35
+# fig10.12 fig15.35   fig17.25 fig17.27 fig17.22 figC.4
 
-none: $(NONE_MAIN)
+build_none_main_object: $(NONE_MAIN)
 
 $(NONE_MAIN):	$(LIBAPUE)
 	$(CC) -c $(CFLAGS) $@.c -o $@.o $(LDFLAGS) $(LDLIBS)
