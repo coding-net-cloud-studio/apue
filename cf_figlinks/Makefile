@@ -84,5 +84,13 @@ clean:
 git_add:
 	-@git add .
 
+# 查找原本_已含有_main函数的c语言源代码
+main:
+	-@./16_find_c_智谱未来.sh main
+
+# 查找原本_不含有_main函数的c语言源代码
+none:
+	-@./16_find_c_智谱未来.sh none
+
 # 包含外部定义的 Makefile 规则
 include $(ROOT)/Make.libapue.inc

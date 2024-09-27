@@ -256,5 +256,6 @@
         "fcntl.h": "c",
         "time.h": "c",
         "msg.h": "c"
-    }
+    },
+    "Codegeex.RepoIndex": true
 }
