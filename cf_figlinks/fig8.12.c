@@ -25,7 +25,6 @@ int main(void)
     exit(0);  // 退出进程
 }
 
-
 static void
 charatatime(char *str)  // 定义charatatime函数,参数为指向字符数组的指针
 {

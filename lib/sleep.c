@@ -12,7 +12,6 @@ sig_alrm(int signo)
     /* nothing to do, just returning wakes up sigsuspend() */
 }
 
-
 unsigned int
 sleep(unsigned int seconds)
 {

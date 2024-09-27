@@ -125,5 +125,4 @@ struct printresp
     char     msg[MSGLEN_MAX]; /* 错误消息 */
 };
 
-
 #endif /* _PRINT_H */

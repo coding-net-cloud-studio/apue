@@ -4,16 +4,16 @@
 */
 int f1(int val)
 {
-    int  num = 0;     /* 初始化一个整数变量num,初始值为0 */
-    int *ptr = &num;  /*  初始化一个指针ptr,指向num的地址 */
+    int  num = 0;    /* 初始化一个整数变量num,初始值为0 */
+    int *ptr = &num; /*  初始化一个指针ptr,指向num的地址 */
 
     /*  如果输入值val为0 */
     if (val == 0)
     {
-        int val;  /*  在if语句块内再次声明一个局部变量val */
+        int val; /*  在if语句块内再次声明一个局部变量val */
 
-        val = 5;     /*  将局部变量val的值设置为5 */
-        ptr = &val;  /*  将指针ptr指向新的局部变量val的地址 */
+        val = 5;    /*  将局部变量val的值设置为5 */
+        ptr = &val; /*  将指针ptr指向新的局部变量val的地址 */
     }
-    return (*ptr + 1);  /*  返回指针ptr指向的值加一后的结果 */
+    return (*ptr + 1); /*  返回指针ptr指向的值加一后的结果 */
 }

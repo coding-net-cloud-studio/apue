@@ -3,7 +3,6 @@
 #include <fcntl.h>     // 引入文件控制操作头文件,如open, fcntl等函数
 #include <sys/wait.h>  // 引入进程等待头文件,提供wait和waitpid函数
 
-
 int main(int argc, char *argv[])
 {
     int         fd;       // 文件描述符

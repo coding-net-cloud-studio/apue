@@ -43,7 +43,7 @@ popen(const char *cmdstring, const char *type)
     }
 
     if (childpid == NULL)
-    {   /* 第一次调用 */
+    { /* 第一次调用 */
         /* 为子进程 pid 分配零初始化的数组 */
         // 获取系统中可以打开的最大文件描述符数
         maxfd = open_max();

@@ -63,7 +63,6 @@ errout:
     return (-1);  // 返回错误码
 }
 
-
 int ptys_open(char *pts_name)
 {
     int fds;  // 文件描述符

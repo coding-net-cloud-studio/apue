@@ -1,7 +1,6 @@
 #include "apue.h"     // 引入APUE库的头文件,该库提供了一套用于编写可移植Unix应用程序的函数.
 #include <termios.h>  // 引入termios.h头文件,该文件包含了控制终端I/O的函数和结构体定义.
 
-
 // @brief 通过伪终端创建子进程
 // @param ptrfdm 指向主伪终端文件描述符的指针
 // @param slave_name 指向从伪终端名称的指针

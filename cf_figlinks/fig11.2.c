@@ -30,8 +30,6 @@ thr_fn(void *arg)
     return ((void *)0);        // 返回NULL
 }
 
-
-
 /**
  * 主函数,创建一个新线程并打印线程ID.
  */
