@@ -42,11 +42,11 @@ PROGS = fig8.17 figC.12 fig8.1 fig1.9 fig12.16 fig7.16 fig17.4 fig3.2 figC.8 fig
 
 
 # 有问题的 
-# fig17.21
-OTHER =  
+# fig17.21 fig11.16
+OTHER =  fig7.11
 # 注意_需要把c的后缀给去掉
-# fig11.16
-# fig7.11 fig20.3 fig13.7 fig17.18 figC.24 
+# 
+#  fig20.3 fig13.7 fig17.18 figC.24 
 # fig16.16 fig16.20 fig16.17 fig5.11 fig17.28 fig10.9
 # fig19.11 fig13.8 fig12.8 fig12.8 fig16.18 fig4.25
 
@@ -58,7 +58,7 @@ OTHER =
 # 默认目标,编译所有程序
 # all: $(PROGS) $(OTHER)
 # all: clean git_add $(PROGS)
-all: $(PROGS)
+all: $(PROGS) $(OTHER)
 
 
 # PROGS: $(PROGS10) $(PROGS20) $(PROGS30) $(PROGS40) $(PROGS50) $(PROGS60) $(PROGS70) $(PROGS80) $(PROGS90) $(PROGSA0) $(PROGSB0) $(PROGSC0) $(PROGSD0) $(PROGSE0)
@@ -77,7 +77,8 @@ $(OTHER):	$(LIBAPUE)
 
 # 清理生成的文件
 clean:
-	rm -f $(PROGS)
+	-@rm -f $(PROGS)
+	-@rm -f $(OTHER)
 
 # 自动增加git add的文件
 git_add:
