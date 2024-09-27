@@ -56,6 +56,7 @@ OTHER =  fig17.21
 
 # 默认目标,编译所有程序
 # all: $(PROGS) $(OTHER)
+# all: clean git_add $(PROGS)
 all: $(PROGS)
 
 
@@ -76,6 +77,10 @@ $(OTHER):	$(LIBAPUE)
 # 清理生成的文件
 clean:
 	rm -f $(PROGS)
+
+# 自动增加git add的文件
+git_add:
+	-@git add .
 
 # 包含外部定义的 Makefile 规则
 include $(ROOT)/Make.libapue.inc

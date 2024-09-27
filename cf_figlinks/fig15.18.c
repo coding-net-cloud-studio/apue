@@ -1,67 +1,44 @@
 #include "apue.h"
 
-static void	sig_pipe(int);		/* our signal handler */
+// 信号处理函数,用于处理管道破裂信号
+static void sig_pipe(int); /* our signal handler */
 
-int
-main(void)
+// 主函数
+int main(void)
 {
-	int		n, fd1[2], fd2[2];
-	pid_t	pid;
-	char	line[MAXLINE];
+    int  n, int1, int2;  // n用于存储读取的字节数,int1和int2用于存储解析的整数
+    char line[MAXLINE];  // 用于存储从标准输入读取的行
 
-	if (signal(SIGPIPE, sig_pipe) == SIG_ERR)
-		err_sys("signal error");
-
-	if (pipe(fd1) < 0 || pipe(fd2) < 0)
-		err_sys("pipe error");
-
-	if ((pid = fork()) < 0) {
-		err_sys("fork error");
-	} else if (pid > 0) {							/* parent */
-		close(fd1[0]);
-		close(fd2[1]);
-
-		while (fgets(line, MAXLINE, stdin) != NULL) {
-			n = strlen(line);
-			if (write(fd1[1], line, n) != n)
-				err_sys("write error to pipe");
-			if ((n = read(fd2[0], line, MAXLINE)) < 0)
-				err_sys("read error from pipe");
-			if (n == 0) {
-				err_msg("child closed pipe");
-				break;
-			}
-			line[n] = 0;	/* null terminate */
-			if (fputs(line, stdout) == EOF)
-				err_sys("fputs error");
-		}
-
-		if (ferror(stdin))
-			err_sys("fgets error on stdin");
-		exit(0);
-	} else {									/* child */
-		close(fd1[1]);
-		close(fd2[0]);
-		if (fd1[0] != STDIN_FILENO) {
-			if (dup2(fd1[0], STDIN_FILENO) != STDIN_FILENO)
-				err_sys("dup2 error to stdin");
-			close(fd1[0]);
-		}
-
-		if (fd2[1] != STDOUT_FILENO) {
-			if (dup2(fd2[1], STDOUT_FILENO) != STDOUT_FILENO)
-				err_sys("dup2 error to stdout");
-			close(fd2[1]);
-		}
-		if (execl("./add2", "add2", (char *)0) < 0)
-			err_sys("execl error");
-	}
-	exit(0);
+    // 循环读取标准输入的每一行
+    while ((n = read(STDIN_FILENO, line, MAXLINE)) > 0)
+    {
+        line[n] = 0;  // 确保读取的字符串以null结尾
+        // 尝试从读取的行中解析两个整数
+        if (sscanf(line, "%d%d", &int1, &int2) == 2)
+        {
+            // 如果成功解析两个整数,计算它们的和并格式化为字符串
+            sprintf(line, "%d\n", int1 + int2);
+            n = strlen(line);  // 获取格式化后字符串的长度
+            // 将结果写入标准输出
+            if (write(STDOUT_FILENO, line, n) != n)
+                err_sys("write error");  // 如果写入失败,报告错误
+        }
+        else
+        {
+            // 如果未能解析两个整数,输出错误信息
+            if (write(STDOUT_FILENO, "invalid args\n", 13) != 13)
+                err_sys("write error");  // 如果写入失败,报告错误
+        }
+    }
+    exit(0);  // 正常退出程序
 }
 
+// 定义一个信号处理函数,用于处理 SIGPIPE 信号
 static void
 sig_pipe(int signo)
 {
-	printf("SIGPIPE caught\n");
-	exit(1);
+    // 当捕获到 SIGPIPE 信号时,打印消息
+    printf("SIGPIPE caught\n");
+    // 退出程序,返回状态码 1
+    exit(1);
 }

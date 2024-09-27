@@ -254,6 +254,7 @@
     "files.associations": {
         "*.in_wmraw_英文版": "c",
         "fcntl.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "msg.h": "c"
     }
 }
