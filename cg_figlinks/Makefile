@@ -60,6 +60,7 @@ OTHER =  fig7.11
 # all: clean git_add $(PROGS)
 # all: $(PROGS) $(OTHER)
 all: build_none_main_object
+all: clean git_add build_none_main_object
 
 
 # PROGS: $(PROGS10) $(PROGS20) $(PROGS30) $(PROGS40) $(PROGS50) $(PROGS60) $(PROGS70) $(PROGS80) $(PROGS90) $(PROGSA0) $(PROGSB0) $(PROGSC0) $(PROGSD0) $(PROGSE0)
