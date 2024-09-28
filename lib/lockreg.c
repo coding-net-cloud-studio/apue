@@ -1,5 +1,5 @@
-#include "apue.h"
-#include <fcntl.h>
+#include "apue.h"   // 引入APUE库的头文件,提供系统调用和标准C库函数的封装
+#include <fcntl.h>  // 引入文件控制操作的头文件,如open(), fcntl()等
 
 /**
  * @brief 对文件描述符进行加锁或解锁操作

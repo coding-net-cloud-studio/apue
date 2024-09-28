@@ -1,5 +1,5 @@
-#include "apue.h"
-#include <fcntl.h>
+#include "apue.h"   // 引入APUE库的头文件,该库提供了一套用于UNIX和Linux环境下的系统编程接口
+#include <fcntl.h>  // 引入文件控制相关的头文件,包含了文件打开,关闭,锁定等操作的函数原型
 
 // @brief 测试文件锁定的函数
 // @param fd 文件描述符

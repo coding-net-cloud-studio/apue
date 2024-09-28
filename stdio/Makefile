@@ -19,7 +19,9 @@ PROGS =	buf fgetsfputs getcharbug getcputc mkstemp tempfiles
 # wmtag_memo_我修改了这里_结束
 
 # 默认目标,编译所有程序和MEMSTR定义的程序
-all:	$(PROGS) $(MEMSTR)
+all: clean $(PROGS) $(MEMSTR)
+	-@git add .
+	-@git status
 
 # 编译每个程序的规则
 # $(PROGS)表示所有要编译的程序

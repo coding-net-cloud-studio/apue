@@ -1,6 +1,6 @@
-#include "apue.h"
-#include <errno.h>  /* for definition of errno */
-#include <stdarg.h> /* ISO C variable aruments */
+#include "apue.h"                                  // 引入APUE库头文件,提供系统编程所需的接口
+#include <errno.h> /* for definition of errno */   // 引入errno头文件,定义了全局变量errno,用于报告错误
+#include <stdarg.h> /* ISO C variable aruments */  // 引入stdarg.h头文件,支持可变参数列表
 
 // 内部函数,用于打印错误信息
 static void err_doit(int, int, const char *, va_list);

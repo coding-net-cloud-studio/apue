@@ -1,5 +1,6 @@
 #include "apue.h"
 
+// 定义缓冲区大小为48字节
 #define BSZ 48
 
 // 主函数
