@@ -6,9 +6,9 @@
 
 unsigned char buf[BSZ];  // 定义一个无符号字符数组作为缓冲区,用于存储读取的数据
 
-/// 将字符c进行ROT13加密
-/// @param c 需要加密的字符
-/// @return 加密后的字符
+// 将字符c进行ROT13加密
+// @param c 需要加密的字符
+// @return 加密后的字符
 unsigned char
 translate(unsigned char c)
 {

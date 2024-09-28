@@ -1,4 +1,4 @@
-#include "apue.h"
+#include "apue.h"  // 引入apue库,提供系统调用和标准C库函数的封装.
 
 /**
  * @brief 执行一个驱动程序,并将其标准输入和输出重定向到管道.

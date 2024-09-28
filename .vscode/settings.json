@@ -255,7 +255,11 @@
         "*.in_wmraw_英文版": "c",
         "fcntl.h": "c",
         "time.h": "c",
-        "msg.h": "c"
+        "msg.h": "c",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "__fpos64_t.h": "c",
+        "__fpos_t.h": "c"
     },
     "Codegeex.RepoIndex": true
 }

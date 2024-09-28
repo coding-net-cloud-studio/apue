@@ -2,9 +2,9 @@
 #include <stddef.h>  // 包含标准定义的头文件,如NULL
 #include <string.h>  // 包含字符串操作函数的头文件
 
-/// @brief 根据用户名获取用户信息的函数
-/// @param name 用户名
-/// @return 如果找到匹配的用户信息,则返回指向passwd结构体的指针;如果没有找到,则返回NULL
+// @brief 根据用户名获取用户信息的函数
+// @param name 用户名
+// @return 如果找到匹配的用户信息,则返回指向passwd结构体的指针;如果没有找到,则返回NULL
 struct passwd *
 getpwnam(const char *name)
 {

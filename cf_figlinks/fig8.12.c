@@ -1,10 +1,10 @@
 #include "apue.h"
 
-/// @brief 在屏幕上逐字符显示字符串,每个字符之间有一个延迟
-/// @param str 要显示的字符串
+// @brief 在屏幕上逐字符显示字符串,每个字符之间有一个延迟
+// @param str 要显示的字符串
 static void charatatime(char *str);
 
-/// @brief 主函数,创建子进程并分别在父进程和子进程中调用charatatime函数
+// @brief 主函数,创建子进程并分别在父进程和子进程中调用charatatime函数
 int main(void)
 {
     pid_t pid;  // 进程ID

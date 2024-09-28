@@ -1,5 +1,5 @@
-#include "apue.h"
-#include <pthread.h>
+#include "apue.h"     // 引入APUE库,提供系统调用和C标准库函数的封装
+#include <pthread.h>  // 引入POSIX线程库,用于多线程编程
 
 /**
  * @brief 创建一个新线程并立即分离它.

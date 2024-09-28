@@ -1,5 +1,5 @@
-#include "apue.h"
-#include <sys/socket.h>
+#include "apue.h"        // 引入APUE库的头文件,提供了一系列系统编程的工具和函数
+#include <sys/socket.h>  // 引入系统socket库的头文件,用于网络通信
 
 /* 定义控制缓冲区的大小,用于发送/接收一个文件描述符 */
 #define CONTROLLEN CMSG_LEN(sizeof(int))

@@ -1,8 +1,8 @@
 #include "apue.h"     // 引入APUE库的头文件
 #include <pthread.h>  // 引入POSIX线程库的头文件
 
-/// 清理函数,在pthread_exit()被调用或者线程被取消时执行
-/// @param arg 传递给清理函数的参数
+// 清理函数,在pthread_exit()被调用或者线程被取消时执行
+// @param arg 传递给清理函数的参数
 void cleanup(void *arg)
 {
     printf("cleanup: %s\n", (char *)arg);  // 打印清理信息

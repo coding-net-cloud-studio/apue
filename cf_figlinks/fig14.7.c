@@ -1,10 +1,10 @@
 #include "apue.h"
 #include <fcntl.h>
 
-/// 锁定指定文件偏移量上的一个字节
-/// @param name 文件名或描述
-/// @param fd 文件描述符
-/// @param offset 要锁定的字节偏移量
+// 锁定指定文件偏移量上的一个字节
+// @param name 文件名或描述
+// @param fd 文件描述符
+// @param offset 要锁定的字节偏移量
 static void
 lockabyte(const char *name, int fd, off_t offset)
 {

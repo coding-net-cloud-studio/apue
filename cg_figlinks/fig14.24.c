@@ -1,4 +1,4 @@
-#include "apue.h"
+#include "apue.h"  // 引入apue库,该库提供了一系列系统编程的工具和函数
 
 /**
  * @brief 向文件描述符写入指定数量的字节.

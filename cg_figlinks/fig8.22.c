@@ -31,10 +31,11 @@ int system(const char *cmdstring) /* version without signal handling */
         while (waitpid(pid, &status, 0) < 0)
         {
             // 如果 waitpid 返回错误且错误码不是 EINTR,则退出循环
+            // 如果errno不等于EINTR,表示waitpid()函数出错,且错误不是由于信号中断引起的
             if (errno != EINTR)
             {
-                status = -1; /* error other than EINTR from waitpid() */
-                break;
+                status = -1;  // 设置状态为-1,表示出现了除EINTR之外的错误
+                break;        // 跳出循环
             }
         }
     }

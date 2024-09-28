@@ -1,5 +1,5 @@
-#include "opend.h"
-#include <fcntl.h>
+#include "opend.h"  // 包含自定义的头文件,可能包含函数声明或宏定义
+#include <fcntl.h>  // 包含标准库头文件,提供文件控制功能,如open, close等
 
 /**
  * @brief 处理客户端的请求.

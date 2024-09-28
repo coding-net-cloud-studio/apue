@@ -1,5 +1,5 @@
-#include "apue.h"
-#include <errno.h>
+#include "apue.h"   // 引入apue库,可能包含自定义的系统调用封装和错误处理函数
+#include <errno.h>  // 引入标准库中的errno.h,用于访问系统调用的错误代码
 
 // 定义服务器监听的套接字路径
 #define CS_OPEN "/tmp/opend.socket"
