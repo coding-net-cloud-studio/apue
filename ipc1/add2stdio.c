@@ -1,4 +1,4 @@
-#include "apue.h"
+#include "apue.h"   // 引入apue库,提供系统调用的封装和错误处理函数
 
 // 主函数,程序入口
 int main(void)

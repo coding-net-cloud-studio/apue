@@ -23,9 +23,11 @@ ifeq "$(PLATFORM)" "freebsd"
 endif
 
 all:	$(PROGS) $(FDPASS)
+	-@git add .
 	for i in open opend open.fe opend.fe; do \
 		(cd $$i && $(MAKE) ) || exit 1; \
 	done
+	-@git status
 
 $(PROGS):	$(LIBAPUE)
 		$(CC) $(CFLAGS) $@.c -o $@ $(LDFLAGS) $(LDLIBS)

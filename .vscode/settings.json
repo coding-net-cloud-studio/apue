@@ -259,7 +259,11 @@
         "stdlib.h": "c",
         "stdio.h": "c",
         "__fpos64_t.h": "c",
-        "__fpos_t.h": "c"
+        "__fpos_t.h": "c",
+        "uio.h": "c",
+        "apue.h": "c",
+        "opend.h": "c",
+        "ctype.h": "c"
     },
     "Codegeex.RepoIndex": true
 }

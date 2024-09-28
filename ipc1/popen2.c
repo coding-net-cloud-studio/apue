@@ -1,5 +1,5 @@
-#include "apue.h"
-#include <sys/wait.h>
+#include "apue.h"      // 引入APUE库,提供系统调用和错误处理的函数
+#include <sys/wait.h>  // 引入wait系统调用的头文件
 
 // 定义PAGER环境变量,如果没有设置则默认为"more"
 #define PAGER "${PAGER:-more}"
