@@ -62,6 +62,7 @@ help:
 	@echo -e "make 3_build_all                               : 开始干活_构建本_考研_学习笔记_的所有源文件"
 	@echo -e "make 4_查看构建结果                            : 查看查看_查看是否已经构建出可执行文件"
 	@echo -e "make 5_show                                    : 用git clean -xdf -n 查看是否已经构建出可执行文件"
+	@echo -e "make 6_show_executable                         : 用find命令查找已经构建出的可执行文件"
 	@echo -e "make 7_clean_all                               : 打扫卫生_清除上面构建出来的所有可执行目标文件"
 	@echo -e "\n\n"
 	@exit 0
@@ -113,6 +114,16 @@ cs: init
 5_show:
 	-@echo -e "$$(pwd)/Makefile wmtask_[5_show]_目标_被运行\n"
 	-@git clean -xdf -n
+	-@exit 0
+
+# -----------------------------------------------------------------------
+# 展示构建的可执行文件列表_排除了shell脚本文件_排除了.o文件_排除了.so文件_排除了awk文件
+.PHONY : 6_show_executable
+6_show_executable:
+	-@echo -e "$$(pwd)/Makefile wmtask_[6_show_executable]_目标_被运行\n"
+	-@find . -type f -executable | grep -v vscode | grep -v ".git" | grep -v ".wmstudy" | grep -v ".sh" | grep -v ".so" | grep -v ".awk" || exit 0
+	-@echo -e "\n共构建出了如下数目的可执行文件:"
+	-@find . -type f -executable | grep -v vscode | grep -v ".git" | grep -v ".wmstudy" | grep -v ".sh" | grep -v ".so" | grep -v ".awk"| wc -l
 	-@exit 0
 
 # -----------------------------------------------------------------------
