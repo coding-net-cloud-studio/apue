@@ -1,5 +1,5 @@
-#include <unistd.h>  // 包含unistd.h头文件，提供对系统调用的访问
-#include <fcntl.h>   // 包含fcntl.h头文件，提供对文件控制的访问
+#include <unistd.h>  // 包含unistd.h头文件,提供对系统调用的访问
+#include <fcntl.h>   // 包含fcntl.h头文件,提供对文件控制的访问
 
 
 /**
