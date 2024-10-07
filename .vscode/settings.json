@@ -249,7 +249,7 @@
         "threads/exitstatus": true,
         "threads/threadid": true,
         "threads/timedlock": true,
-        
+
     },
     "files.associations": {
         "*.in_wmraw_英文版": "c",
@@ -265,5 +265,23 @@
         "opend.h": "c",
         "ctype.h": "c"
     },
-    "Codegeex.RepoIndex": true
+    "Codegeex.RepoIndex": true,
+    "commandOnAllFiles.commands": {
+        "cb38_把中文符号修改为英文符号": {
+          "command": "chinese-punctuation-to-english.toEnglish",
+          "includeFileExtensions": [".py",".md"],
+          "excludeFolders": [
+            "node_modules", "out", ".vscode-test", "media", ".git"
+            ]
+
+        },
+        "cb40_删除尾部的空格": {
+            "command": "editor.action.trimTrailingWhitespace",
+            "includeFileExtensions": [".py",".lua"],
+            "excludeFolders": [
+              "node_modules", "out", ".vscode-test", "media", ".git"
+              ]
+
+          }
+      }
 }
