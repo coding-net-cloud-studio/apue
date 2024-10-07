@@ -51,7 +51,7 @@ f20_linux_git_setting() {
 	#相当于在~/.gitconfig 文件中加入一行 file:/root/.gitconfig   core.quotepath=false
 	# core.quotepath=false
 	git config --global core.quotepath false
-	git config --global --add safe.directory $(pwd) 
+	git config --global --add safe.directory $(pwd)
 
 	# 来自廖雪峰的git教程
 	# https://www.liaoxuefeng.com/wiki/896043488029600/898732837407424
@@ -98,7 +98,7 @@ f27_38_install_some_vs_ext_quick(){
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-vscode.cpptools                 --force
 	# 代替为如下的简单方法
 
-	if [[ -f $(which cloudstudio) ]]; then 
+	if [[ -f $(which cloudstudio) ]]; then
 		# 安装c与c++的调试vscode扩展
 		# 位置大体类似 .vscode/ext01_ms-vscode.cpptools-1.17.5_linux-x64.vsix
 		if [[ $(find .vscode/ -name '*ms-vscode.cpptools*.vsix'| wc -l) -gt 0 ]]; then
@@ -106,9 +106,9 @@ f27_38_install_some_vs_ext_quick(){
 			wmvar26_10_code_runner_file_name=$(basename $(find .vscode/ -name '*ms-vscode.cpptools*.vsix'| sort -V | tail -n 2 | head -n 1))
 			# 判断是否是cloudstudio的环境
 			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_10_code_runner_file_name} --force
-		else 
+		else
 			echo "没有找到随着本git仓库携带的_ms-vscode.cpptools_扩展"
-		fi 
+		fi
 
 		# 安装中文标点符号转英文标点符号的vscode扩展
 		# 位置大体类似 .vscode/ext06_buuug7.chinese-punctuation-to-english-1.1.0.vsix
@@ -117,22 +117,22 @@ f27_38_install_some_vs_ext_quick(){
 			wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*buuug7.chinese-punctuation*.vsix'| sort -V | tail -n 2 | head -n 1))
 			# 判断是否是cloudstudio的环境
 			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
-		else 
+		else
 			echo "没有找到随着本git仓库携带的_buuug7.chinese-punctuation_扩展"
-		fi 
+		fi
 
 		# 安装ut8变量与函数名的_中文输入助手_vscode扩展_是_吴烜(xuan三声)领导下开源的vscode扩展
 		# 属于中文代码快速补全
-		# 开源的git仓库地址如下 https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant.git 
+		# 开源的git仓库地址如下 https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant.git
 		# 位置大体类似 .vscode/ext10_CodeInChinese.ChineseInputAssistant-1.5.8.vsix
 		if [[ $(find .vscode/ -name '*CodeInChinese.ChineseInputAssistant*.vsix'| wc -l) -gt 0 ]]; then
 			# 提取出CodeInChinese.ChineseInputAssistant扩展的文件名称
 			wmvar26_30_code_runner_file_name=$(basename $(find .vscode/ -name '*CodeInChinese.ChineseInputAssistant*.vsix'| sort -V | tail -n 2 | head -n 1))
 			# 判断是否是cloudstudio的环境
 			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_30_code_runner_file_name} --force
-		else 
+		else
 			echo "没有找到随着本git仓库携带的_CodeInChinese.ChineseInputAssistant_扩展"
-		fi 
+		fi
 
 		# 安装presentation-buddy用于协助codetour等控制学习笔记的演示过程
 		# https://marketplace.visualstudio.com/items?itemName=mauricedebeijer.presentation-buddy
@@ -142,9 +142,9 @@ f27_38_install_some_vs_ext_quick(){
 			wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*mauricedebeijer.presentation-buddy*.vsix'| sort -V | tail -n 2 | head -n 1))
 			# 判断是否是cloudstudio的环境
 			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
-		else 
+		else
 			echo "没有找到随着本git仓库携带的_mauricedebeijer.presentation-buddy_扩展"
-		fi 
+		fi
 
 		# 安装数据分析所用的jupyter_notebook的vscode扩展
 		# 位置大体类似 .vscode/ext26_ms-toolsai.jupyter-2023.5.1101742258.vsix
@@ -153,9 +153,9 @@ f27_38_install_some_vs_ext_quick(){
 			wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*ms-toolsai.jupyter*.vsix'| sort -V | tail -n 2 | head -n 1))
 			# 判断是否是cloudstudio的环境
 			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
-		else 
+		else
 			echo "没有找到随着本git仓库携带的_ms-toolsai.jupyter_扩展"
-		fi 
+		fi
 
 		# 安装command-alias用于获得vscode内部与扩展的命令的全名
 		# https://marketplace.visualstudio.com/items?itemName=ArturoDent.command-alias
@@ -165,11 +165,11 @@ f27_38_install_some_vs_ext_quick(){
 			wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*ArturoDent.command-alias*.vsix'| sort -V | tail -n 2 | head -n 1))
 			# 判断是否是cloudstudio的环境
 			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
-		else 
+		else
 			echo "没有找到随着本git仓库携带的_ArturoDent.command-alias_扩展"
-		fi 
+		fi
 
-	fi 
+	fi
 
 	# 下面的扩展与ms-vscode.cpptools在调试的时候冲突_不要安装
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  llvm-vs-code-extensions.vscode-clangd --force
@@ -213,23 +213,23 @@ f33_install_common_software_quick(){
 		bison \
 		nasm \
 		bear \
-		strace 
-	
+		strace
+
 		# DEBIAN_FRONTEND='noninteractive' apt install -y rkhunter unhide sshpass
-	
+
 	return 0
 }
 
 f36_install_gcc_10_versioin(){
 
-	apt install -y gcc-10 
-	apt install -y g++-10 
+	apt install -y gcc-10
+	apt install -y g++-10
 
-	[ -f /usr/bin/gcc-9 ]  && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 120 
+	[ -f /usr/bin/gcc-9 ]  && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 120
 	[ -f /usr/bin/gcc-10 ] && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 150
 	[ -f /usr/bin/g++-9 ]  && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 120
 	[ -f /usr/bin/g++-10 ] && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 150
-	
+
 }
 
 
@@ -246,7 +246,7 @@ l37_apue_3e_install_some_software(){
 # 把apue_3e的几个文件拷贝到需要的位置
 l39_apue_3e_copy_some_files(){
 	cp include/apue.h /usr/include/
-	cp lib/error.c /usr/include/ 
+	cp lib/error.c /usr/include/
 }
 
 # 把apue_3e的几个文件shell与awk文件确认变为可执行
@@ -313,20 +313,20 @@ all(){
 	local WMTAG_LOCK_FILE=~/w26.c10_41_38_cloud_studio_apue_3e_已经存在锁文件了_运行标记文件-wmgitignore.wmtag_lock.sh
 
 	# 判断位于cloudstudio的工作空间中才会执行
-	if [[ -f $(which cloudstudio) ]]; then 
+	if [[ -f $(which cloudstudio) ]]; then
 		# 在腾云扣钉的cloudstudio工作空间中
 
 		# 判断是否已经执行过至少1次
-		if [[ ! -f ${WMTAG_LOCK_FILE} ]]; then 
+		if [[ ! -f ${WMTAG_LOCK_FILE} ]]; then
 			# 不存在锁文件_才会执行
 			f92_main_cloudstudio
-		else 
+		else
 			# 执行过了_就不再执行了
 			echo "已经执行过一次了_不会再次执行_cloudstudio工作空间中_apue_3e的初始化"
-		fi 
+		fi
 	else
-		echo "没有处于cloudstudio工作空间中_不需要执行" 
-	fi 
+		echo "没有处于cloudstudio工作空间中_不需要执行"
+	fi
 
 	return 0
 }

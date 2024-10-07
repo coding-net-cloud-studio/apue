@@ -112,10 +112,10 @@ f27_38_install_some_vs_ext_quick(){
 f28_20_install_some_wmstudy_bin_tools(){
 	# pause_60_second
 	# 只有位于cloudstudio工作空间中才执行
-	if [[ -f $(which cloudstudio) ]]; then 
+	if [[ -f $(which cloudstudio) ]]; then
 		# pause_60_second
 		# 只有具有如下的目录才执行
-		if [[ -d .wmstudy/bin/ ]]; then 
+		if [[ -d .wmstudy/bin/ ]]; then
 			# pause_60_second
 			chmod +x .wmstudy/bin/*
 			# ls -lah .wmstudy/bin/
@@ -123,8 +123,8 @@ f28_20_install_some_wmstudy_bin_tools(){
 			# ls -lah /usr/bin/imgcat
 			cp -r .wmstudy/bin/* /bin/
 			# ls -alh /bin/imgcat
-		fi 
-	fi 
+		fi
+	fi
 }
 
 f30_install_common_software(){
@@ -332,9 +332,9 @@ y30_b2_09_memos_setup(){
 # b2_11_此时应该位于本git仓库的顶层目录下_类似_绝对目录为_/root/RemoteWorking/22.wmsrc_memos 或 /workspace/22.wmsrc_memos
 # b2_16_缺省的后台服务端口是_8081
 y32_b2_15_start_memos_with_air_liveload(){
-	if [[ -f workspace.yml ]]; then 
+	if [[ -f workspace.yml ]]; then
 	 	air -c scripts/.air.toml &
-	 fi 
+	 fi
 	return 0
 }
 

@@ -10,13 +10,13 @@
             "${workspaceFolder}/printer",
         ]
     },
-    
+
     "configurations": [
         {
             "name": "Linux",
             "includePath": [
                 "${myDefaultIncludePath}"
-            ]        
+            ]
         }
     ],
     "version": 4

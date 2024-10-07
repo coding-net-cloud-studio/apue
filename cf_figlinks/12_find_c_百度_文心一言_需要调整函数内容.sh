@@ -9,16 +9,16 @@
 
 # 第一个bash函数:找出包含main函数的.c文件
 
-find_main_files() {  
-    # 在指定目录下递归查找包含"main"的.c文件  
-    # 注意:这里假设main函数在文件中至少会完整出现一次,即至少包含"main("  
-    grep -rlE 'main\(' "$1"/*.c | while read -r file; do  
-        echo "$file"  
-    done  
-}  
-  
-# 使用方法  
-# 假设当前目录是你的cf_figlinks目录  
+find_main_files() {
+    # 在指定目录下递归查找包含"main"的.c文件
+    # 注意:这里假设main函数在文件中至少会完整出现一次,即至少包含"main("
+    grep -rlE 'main\(' "$1"/*.c | while read -r file; do
+        echo "$file"
+    done
+}
+
+# 使用方法
+# 假设当前目录是你的cf_figlinks目录
 # find_main_files "$(pwd)"
 
 # 注意:这里使用了-E选项来启用扩展的正则表达式,使得我们可以直接搜索main(这样的模式.-r或-R选项表示递归搜索,-l选项让grep只输出包含匹配项的文件名.
@@ -54,9 +54,9 @@ find_non_main_files() {
     done
 }
 
-  
-# 使用方法  
-# 假设当前目录是你的cf_figlinks目录  
+
+# 使用方法
+# 假设当前目录是你的cf_figlinks目录
 find_non_main_files "$(pwd)"
 
 # 注意:
