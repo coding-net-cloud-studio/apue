@@ -3,10 +3,17 @@
 # 下面一行的定义_对于echo -e模式正确输出是必须的
 SHELL=/bin/bash
 
+# NOTE 内部的_LINUX开发机器上的版本_多一个cf_figlinks
+# DIRS = lib intro sockets advio daemons datafiles db environ \
+# 	fileio filedir ipc1 ipc2 proc pty relation signals standards \
+# 	stdio termios threadctl threads printer exercises \
+# 	cf_figlinks cg_figlinks ch_figlinks_batch_ai_comment
+
+# NOTE cloudstudio.net等的版本_少了一个cf_figlinks
 DIRS = lib intro sockets advio daemons datafiles db environ \
 	fileio filedir ipc1 ipc2 proc pty relation signals standards \
 	stdio termios threadctl threads printer exercises \
-	cf_figlinks cg_figlinks ch_figlinks_batch_ai_comment
+	cg_figlinks ch_figlinks_batch_ai_comment
 
 # -----------------------------------------------------------------------
 # 这里是缺省构建目标_只是_展示帮助信息
