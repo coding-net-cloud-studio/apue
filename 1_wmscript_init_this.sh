@@ -462,6 +462,13 @@ y77_docker_pull_images(){
 }
 
 # ======================================================================================
+# NOTE 这里是为了wc24_apue_3rd_第3版_构建与编译_的依赖库
+wc24_30_install_some_libraries(){
+	apt install libbsd-dev
+	return 0
+}
+
+# ======================================================================================
 
 all(){
 
@@ -478,6 +485,8 @@ all(){
 	f70_remove_go_env
 
 	f71_set_go_env
+
+	wc24_30_install_some_libraries
 
 	# f68_20_install_go_tools
 
