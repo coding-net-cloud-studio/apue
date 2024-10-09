@@ -39,12 +39,12 @@ init:
 # NOTE 这里给cloudstudio增加一个独立的初始化快捷方式
 init_for_cloudstudio:
 	-@ [[ -f $$(which cloudstudio) ]] && echo "cloudstudio 已经安装" || echo "cloudstudio 未安装"
-	-@ [[ -f $$(which cloudstudio) ]] && apt install libbsd-dev || echo "cloudstudio 未安装"
+	-@ [[ -f $$(which cloudstudio) ]] && apt update && apt install libbsd-dev || echo "cloudstudio 未安装"
 
 # REVIEW build构建目标被如下的文件所引用 .vscode/tasks.json
 # REVIEW 本构建目标,也间接的被.vscode/launch.json所引用_参与到单个c语言源代码的调试过程中去
 .PHONY : build
-build: init_for_cloudstudio
+build:
 	for i in $(DIRS); do \
 		(cd $$i && echo "making $$i" && $(MAKE) ) || exit 1; \
 	done
