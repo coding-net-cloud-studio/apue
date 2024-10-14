@@ -124,7 +124,8 @@ cs: init
 .PHONY : 5_show
 5_show:
 	-@echo -e "$$(pwd)/Makefile wmtask_[5_show]_目标_被运行\n"
-	-@git clean -xdf -n
+	-@ [[ ! -f $$(which cloudstudio) ]] && git clean -xdf -n || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && find . -type f -executable | grep -v ".vscode" | grep -v ".wmstudy" | grep -v ".sh" || exit 0
 	-@exit 0
 
 # -----------------------------------------------------------------------
@@ -142,7 +143,7 @@ cs: init
 .PHONY : 7_clean_all
 7_clean_all: clean
 	-@echo -e "$$(pwd)/Makefile wmtask_[7_clean_all]_目标_被运行\n"
-	-@git clean -xdf -n
+	-@ [[ ! -f $$(which cloudstudio) ]] && git clean -xdf -n || exit 0
 	-@exit 0
 
 # -----------------------------------------------------------------------
