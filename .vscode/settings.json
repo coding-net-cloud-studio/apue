@@ -92,6 +92,14 @@
             "source.organizeImports": "explicit"
         }
     },
+    "command-server.allowList": [
+        "workbench.*"],
+        // https://github.com/pokey/dotfiles/blob/aaca87906e766a63b1381d71e0271ccb2d07d8f8/vscode/settings.json#L24-L28
+    "terminal.integrated.commandsToSkipShell": [
+            // Ensure the toggle sidebar visibility keybinding skips the shell
+            "command-server.runCommand",
+            "command-server.saveState",
+        ],
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
