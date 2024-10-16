@@ -34,7 +34,7 @@ all:
 
 .PHONY : init
 init:
-	-@ [[ -f $$(which cloudstudio) ]] && git checkout -b cloudstudio_运行中 || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git checkout -b cloudstudio_刚刚下拉 || exit 0
 	-@bash 10.wmscript_init_this.sh
 
 
@@ -116,6 +116,7 @@ club: 11_install_lib_for_club
 	-@echo -e "$$(pwd)/Makefile wmtask_[2_init_for_cloudstudio]_目标_被运行\n"
 	-@ [[ -f $$(which cloudstudio) ]] && git add -A || exit 0
 	-@ [[ -f $$(which cloudstudio) ]] && git commit -m "进入cloudstudio首次提交" || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git checkout -b cloudstudio_运行中 || exit 0
 	-@ [[ -f $$(which cloudstudio) ]] && make build || exit 0
 	-@ [[ -f $$(which cloudstudio) ]] && make help  || exit 0
 	-@exit 0
