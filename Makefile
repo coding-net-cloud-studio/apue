@@ -34,7 +34,9 @@ all:
 
 .PHONY : init
 init:
+	-@ [[ ! -f $$(which cloudstudio) ]] && git checkout -b cloudstudio_运行中
 	-@bash 10.wmscript_init_this.sh
+
 
 # NOTE 这里给club增加一个独立的初始化快捷方式
 # 这里仅仅安装几个构建apue需要用到的软件与库文件
@@ -110,8 +112,10 @@ club: 11_install_lib_for_club
 
 .PHONY : 12_init_for_cloudstudio cs
 # 下面是别名
-2_init_for_cloudstudio: init
+12_init_for_cloudstudio: init
 	-@echo -e "$$(pwd)/Makefile wmtask_[2_init_for_cloudstudio]_目标_被运行\n"
+	-@ [[ ! -f $$(which cloudstudio) ]] && git addd . && git commit -m "进入cloudstudio首次提交" || exit 0
+	-@ [[ ! -f $$(which cloudstudio) ]] && make help
 	-@exit 0
 
 # 下面是别名

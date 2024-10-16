@@ -67,13 +67,13 @@ f27_38_install_some_vs_ext_quick(){
 	echo -e "\n-------在cloudstudio中快速的安装某几个vscode的扩展-------\n"
 
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  formulahendry.code-runner         --force
-	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  AMiner.codegeex                   --force
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  AMiner.codegeex                   --force
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  alefragnani.Bookmarks             --force
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ExodiusStudios.comment-anchors    --force
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ritwickdey.LiveServer             --force
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-azuretools.vscode-docker       --force
-	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  cweijan.vscode-office             --force
-	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  arcanis.vscode-zipfs              --force
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  cweijan.vscode-office             --force
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  arcanis.vscode-zipfs              --force
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  mads-hartmann.bash-ide-vscode     --force
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  vsls-contrib.codetour             --force
 
@@ -82,7 +82,7 @@ f27_38_install_some_vs_ext_quick(){
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  maelvalais.autoconf               --force
 
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  Sycl.markdown-command-runner      --force
-	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  CloudStudio.tutorialkit           --force
+	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  CloudStudio.tutorialkit           --force
 
 	# NOTE 下面是应对cloudstudio最近把all in one工作空间中所有的vscode扩展都删掉带来的问题_增加的部分
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-python.python   					--force
