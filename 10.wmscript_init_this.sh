@@ -184,6 +184,30 @@ f27_38_install_some_vs_ext_quick(){
 			echo "没有找到随着本git仓库携带的_ArturoDent.command-alias_扩展"
 		fi
 
+		# 安装cloudstudio.browser-preview-lite-club用于获得cloudstudio club的课程能力
+		# https://open-vsx.org/extension/cloudstudio/browser-preview-lite-club
+		# 位置大体类似 .vscode/wd47_cloudstudio.browser-preview-lite-club-0.0.25.vsix
+		if [[ $(find .vscode/ -name '*cloudstudio.browser-preview-lite-club*.vsix'| wc -l) -gt 0 ]]; then
+			# 提取出cloudstudio.browser-preview-lite-club扩展的文件名称
+			wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*cloudstudio.browser-preview-lite-club*.vsix'| sort -V | tail -n 2 | head -n 1))
+			# 判断是否是cloudstudio的环境
+			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
+		else
+			echo "没有找到随着本git仓库携带的_cloudstudio.browser-preview-lite-club_扩展"
+		fi
+
+		# 安装cloudstudio.workspace-club用于获得cloudstudio club的课程能力
+		# https://open-vsx.org/extension/cloudstudio/workspace-club
+		# 位置大体类似 .vscode/wg55_cloudstudio.workspace-club-0.0.50.vsix
+		if [[ $(find .vscode/ -name '*cloudstudio.workspace-club*.vsix'| wc -l) -gt 0 ]]; then
+			# 提取出cloudstudio.workspace-club扩展的文件名称
+			wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*cloudstudio.workspace-club*.vsix'| sort -V | tail -n 2 | head -n 1))
+			# 判断是否是cloudstudio的环境
+			[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
+		else
+			echo "没有找到随着本git仓库携带的_cloudstudio.workspace-club_扩展"
+		fi
+
 	fi
 
 	# 下面的扩展与ms-vscode.cpptools在调试的时候冲突_不要安装
