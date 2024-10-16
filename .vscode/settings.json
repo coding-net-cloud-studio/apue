@@ -40,7 +40,7 @@
         "javascript": "node",
         "python": "python3",
         "go": "go run",
-        "c": "cd $dir && gcc -g -I../include -Wall -DLINUX -D_GNU_SOURCE $fileName -L../lib -lapue -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+        "c": "export PATH=.:${PATH} && cd $dir && gcc -g -I../include -Wall -DLINUX -D_GNU_SOURCE $fileName -L../lib -lapue -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
     "code-runner.executorMapByGlob": {
         "Makefile": "cd $dir && make -f $fileName",
