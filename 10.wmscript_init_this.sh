@@ -98,6 +98,10 @@ f27_38_install_some_vs_ext_quick(){
 	# NOTE 下面是应对cloudstudio最近把all in one工作空间中所有的vscode扩展都删掉带来的问题_增加的部分
 	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-python.python   					--force
 
+	# NOTE 这里是为了apue,linux_c等增加的cpp的扩展(ms-cpptools好像是没有发挥作用_原因未知)
+	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  llvm-vs-code-extensions.vscode-clangd --force
+
+
 	# 下面的来自openvsx社区的jupyter破裂了只能手工的安装
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-toolsai.jupyter   					--force
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-toolsai.jupyter-keymap   			--force
