@@ -45,6 +45,11 @@ EOF
 }
 
 f20_linux_git_setting() {
+
+	git config --global user.email "cloudstudio_my_study@qq.com"
+
+  	git config --global user.name "cloudstudio_my_study"
+
 	#在Linux操作系统环境下
 	# git status中文显示乱码解决:
 	# https://www.cnblogs.com/v5captain/p/14832597.html
@@ -58,6 +63,12 @@ f20_linux_git_setting() {
 	git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 	git config --global alias.count "rev-list --all --count"
+
+	git config --global alias.show-graph "log --graph --abbrev-commit --pretty=oneline"
+	git config --global alias.sg "log --graph --abbrev-commit --pretty=oneline"
+	git config --global alias.st "status -s"
+	git config --global alias.last "diff-tree --no-commit-id --name-only -r HEAD~1"
+	git config --global alias.gt "status -s"
 
 }
 
