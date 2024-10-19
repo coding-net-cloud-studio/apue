@@ -1,40 +1,75 @@
 ## UNIX环境高级编程 第3版
 
-[本书在人民邮电出版社的介绍](https://www.ptpress.com.cn/shopping/buy?bookId=b14ca98e-9fb3-464a-8563-cc6ec8aa7505)
+[本书在人民邮电出版社的介绍](https://www.ptpress.com.cn/shopping/buy?bookId=b14ca98e-9fb3-464a-8563-cc6ec8aa7505) [电子工业出版社京东自营官方旗舰店 本书购买链接](https://item.jd.com/14186183.html)
 
-**本书内容概念清晰，阐述精辟，对于所有层次UNIX/Linux程序员均可适用。**
+[![Cloud Studio Template](https://cs-res.codehub.cn/common/assets/icon-badge.svg)](https://cloudstudio.net/a/22156577478148096?channel=share&sharetype=Markdown)
 
-![本书图片](https://cdn.ptpress.cn/uploadimg/Material/978-7-115-51675-6/72jpg/51675.jpg)
+[美]W. 理查德·史蒂文斯(W. Richard Stevens)史蒂芬·A. 拉戈( Stephen A. Rago)
 
-[美]W. 理查德·史蒂文斯（W. Richard Stevens）史蒂芬·A. 拉戈（ Stephen A. Rago）
+**本书内容概念清晰,阐述精辟,对于所有层次UNIX/Linux程序员均可适用.**
 
-UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
+```bash
+make 0_check                  : 判断是否处于cloudstudio工作空间中
+make 11_install_lib_for_club  : 本目标只是在club教程中运行_快速安装构建需要用到的几个库
+make 12_init_for_cloudstudio  : 本目标只是在cloudstudio工作空间中运行_只需要运行1次就可以了
+make 23_build_all             : 开始干活_构建本_考研_学习笔记_的所有源文件
+make 4_查看构建结果            : 查看查看_查看是否已经构建出可执行文件
+make 5_show                   : 用git clean -xdf -n 查看是否已经构建出可执行文件
+make 6_show_executable        : 用find命令查找已经构建出的可执行文件
+make 7_clean_all              : 打扫卫生_清除上面构建出来的所有可执行目标文件
+```
+
+![本书图片](wmimages/wc24_c28_book.png)
+
+#### 我自学 我自讲
+
+恋爱与撒狗粮专业研究生,是一个在云上工作室cloudstudio.net中,
+
+在腾讯云AI编程助手与智谱codegeex的辅助下,
+
+为智谱ChatGLM3大模型微调,如何一步一步的,准备数据的,系列分享.
+
+"我自学,我自讲" 侧重在:
+
+    智谱ChatGLM3大模型,腾讯云HAI高性能计算平台上,如何与ollama相互配合与互动的模式下,实现该大模型的本地化部署,应用开发与微调.
+
+这里是本系列分享的第cb01个文章与cloudstudio应用:
+
+"贝加尔阿楠和小嗒莎在西伯利亚结婚了". 故事主线将沿着,男主与女主,在北京相遇,流浪在北京时候的故事展开.
+
+我就是传说中的 赶考赶考
+
+欢迎加上面VX提供故事线索.
+
+![中国青年情侣_流浪在北京2](wmimages/bb36_beijing.png)
 
 ### 内容简介
 
-**本书是被誉为UNIX编程“圣经”的Advanced Programming in the UNIX Environment一书的第3版。**
+**本书是被誉为UNIX编程"圣经"的Advanced Programming in the UNIX Environment一书的第3版.**
 
-**在本书第2版出版后的8年中，UNIX发生了巨大的变化，特别是影响UNIX编程接口的有关标准变化很大。**
+**在本书第2版出版后的8年中,UNIX发生了巨大的变化,特别是影响UNIX编程接口的有关标准变化很大.**
 
-**本书在保持前一版风格的基础上，根据新的标准对内容进行了修订和增补，反映了新的技术发展。**
+**本书在保持前一版风格的基础上,根据新的标准对内容进行了修订和增补,反映了新的技术发展.**
 
-**书中除了介绍UNIX文件和目录、标准I/O库、系统数据文件和信息、进程环境、进程控制、进程关系、信号、线程、线程控制、守护进程、各种I/O、进程间通信、网络IPC、伪终端等方面的内容，还在此基础上介绍了众多应用实例，包括如何创建数据库函数库以及如何与网络打印机通信等。**
+**书中除了介绍UNIX文件和目录,标准I/O库,系统数据文件和信息,进程环境,进程控制,进程关系,信号,线程,线程控制,守护进程,各种I/O,进程间通信,网络IPC,伪终端等方面的内容,还在此基础上介绍了众多应用实例,包括如何创建数据库函数库以及如何与网络打印机通信等.**
 
-**此外，还在附录中给出了函数原型和部分习题的答案。**
+**此外,还在附录中给出了函数原型和部分习题的答案.**
 
 ### 作者简介
 
-**W. 理查德·史蒂文斯（W. Richard Stevens），国际知名的UNIX 和网络专家，备受赞誉的技术作家。生前著有多部经典的传世之作，包括《UNIX 网络编程》（两卷本）、《TCP/IP 详解》（三卷本）和本书首版。**
+[美]W. 理查德·史蒂文斯(W. Richard Stevens)史蒂芬·A. 拉戈( Stephen A. Rago)
 
-**史蒂芬·A. 拉戈（Stephen A. Rago），资深UNIX 程序员，目前任NEC 美国实验室存储系统研究组研究员。之前是贝尔实验室的UNIX 系统V 版本4 的开发人员之一。著有《UNIX 系统V 网络编程》，是本书第1版的技术审校和第2 版的共同作者。**
+**W. 理查德·史蒂文斯(W. Richard Stevens),国际知名的UNIX 和网络专家,备受赞誉的技术作家.生前著有多部经典的传世之作,包括<UNIX 网络编程>(两卷本),<TCP/IP 详解>(三卷本)和本书首版.**
+
+**史蒂芬·A. 拉戈(Stephen A. Rago),资深UNIX 程序员,目前任NEC 美国实验室存储系统研究组研究员.之前是贝尔实验室的UNIX 系统V 版本4 的开发人员之一.著有<UNIX 系统V 网络编程>,是本书第1版的技术审校和第2 版的共同作者.**
 
 ### 译者简介
 
-戚正伟 博士，上海交通大学软件学院教授、博士生导师，CCF会员，CCF系统软件、理论计算机专委会委员。主要研究方向为系统软件和程序分析等，除翻译本书外，还著有《NewBluePill：深入理解硬件虚拟机》等。
+戚正伟 博士,上海交通大学软件学院教授,博士生导师,CCF会员,CCF系统软件,理论计算机专委会委员.主要研究方向为系统软件和程序分析等,除翻译本书外,还著有[NewBluePill:深入理解硬件虚拟机](NewBluePill:%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E7%A1%AC%E4%BB%B6%E8%99%9A%E6%8B%9F%E6%9C%BA)等.
 
-张亚英 博士，同济大学电子与信息工程学院计算机系教授，研究方向为网络与分布式系统、大数据挖掘与分析等。
+张亚英 博士,同济大学电子与信息工程学院计算机系教授,研究方向为网络与分布式系统,大数据挖掘与分析等.
 
-尤晋元 上海交通大学计算机科学及工程系教授、博士生导师。在科研方面，主要从事操作系统和分布对象计算技术方面的研究。在教学方面，长期承担操作系统及分布计算等课程的教学工作。主编和翻译了多本操作系统教材和参考书，包括《UNIX操作系统教程》《UNIX高级编程技术》《UNIX环境高级编程》和《操作系统：设计与实现》等。
+尤晋元 上海交通大学计算机科学及工程系教授,博士生导师.在科研方面,主要从事操作系统和分布对象计算技术方面的研究.在教学方面,长期承担操作系统及分布计算等课程的教学工作.主编和翻译了多本操作系统教材和参考书,包括<UNIX操作系统教程><UNIX高级编程技术><UNIX环境高级编程>和[操作系统:设计与实现](%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F:%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0)等.
 
 ### 图书目录
 
@@ -106,7 +141,7 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **2．5．3　XSI Limits / XSI限制　41**
 
-**2．5．4　sysconf， pathconf， and fpathconf Functions / 函数sysconf、pathconf和fpathconf　42**
+**2．5．4　sysconf, pathconf, and fpathconf Functions / 函数sysconf,pathconf和fpathconf　42**
 
 **2．5．5　Indeterminate Runtime Limits / 不确定的运行时限制　49**
 
@@ -148,7 +183,7 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **3．12　dup and dup2 Functions / 函数dup和dup2　79**
 
-**3．13　sync， fsync， and fdatasync Functions / 函数sync、fsync和fdatasync　81**
+**3．13　sync, fsync, and fdatasync Functions / 函数sync,fsync和fdatasync　81**
 
 **3．14　fcntl Function / 函数fcntl　82**
 
@@ -164,7 +199,7 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **4．1　Introduction / 引言　93**
 
-**4．2　stat， fstat， fstatat， and lstat Functions / 函数stat、fstat、fstatat和lstat　93**
+**4．2　stat, fstat, fstatat, and lstat Functions / 函数stat,fstat,fstatat和lstat　93**
 
 **4．3　File Types / 文件类型　95**
 
@@ -178,11 +213,11 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **4．8　umask Function / 函数umask　104**
 
-**4．9　chmod， fchmod， and fchmodat Functions / 函数chmod、fchmod和fchmodat　106**
+**4．9　chmod, fchmod, and fchmodat Functions / 函数chmod,fchmod和fchmodat　106**
 
 **4．10　Sticky Bit / 粘着位　108**
 
-**4．11　chown， fchown， fchownat， and lchown Functions / 函数chown、fchown、fchownat和lchown　109**
+**4．11　chown, fchown, fchownat, and lchown Functions / 函数chown,fchown,fchownat和lchown　109**
 
 **4．12　File Size / 文件长度　111**
 
@@ -190,7 +225,7 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **4．14　File Systems / 文件系统　113**
 
-**4．15　link， linkat， unlink， unlinkat， and remove Functions / 函数link、linkat、unlink、unlinkat和remove　116**
+**4．15　link, linkat, unlink, unlinkat, and remove Functions / 函数link,linkat,unlink,unlinkat和remove　116**
 
 **4．16　rename and renameat Functions / 函数rename和renameat　119**
 
@@ -200,13 +235,13 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **4．19　File Times / 文件的时间　124**
 
-**4．20　futimens， utimensat， and utimes Functions / 函数futimens、utimensat和utimes　126**
+**4．20　futimens, utimensat, and utimes Functions / 函数futimens,utimensat和utimes　126**
 
-**4．21　mkdir， mkdirat， and rmdir Functions / 函数mkdir、mkdirat和rmdir　129**
+**4．21　mkdir, mkdirat, and rmdir Functions / 函数mkdir,mkdirat和rmdir　129**
 
 **4．22　Reading Directories / 读目录　130**
 
-**4．23　chdir， fchdir， and getcwd Functions / 函数chdir、fchdir和getcwd　135**
+**4．23　chdir, fchdir, and getcwd Functions / 函数chdir,fchdir和getcwd　135**
 
 **4．24　Device Special Files / 设备特殊文件　137**
 
@@ -222,7 +257,7 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **5．2　Streams and FILE Objects / 流和FILE对象　143**
 
-**5．3　Standard Input， Standard Output， and Standard Error / 标准输入、标准输出和标准错误　145**
+**5．3　Standard Input, Standard Output, and Standard Error / 标准输入,标准输出和标准错误　145**
 
 **5．4　Buffering / 缓冲　145**
 
@@ -360,7 +395,7 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **9．6　Controlling Terminal / 控制终端　296**
 
-**9．7　tcgetpgrp， tcsetpgrp， and tcgetsid Functions / 函数tcgetpgrp、tcsetpgrp和tcgetsid　298**
+**9．7　tcgetpgrp, tcsetpgrp, and tcgetsid Functions / 函数tcgetpgrp,tcsetpgrp和tcgetsid　298**
 
 **9．8　Job Control / 作业控制　299**
 
@@ -412,7 +447,7 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **10．18　system Function / 函数system　367**
 
-**10．19　sleep， nanosleep， and clock_nanosleep Functions / 函数sleep、nanosleep和clock_nanosleep　373**
+**10．19　sleep, nanosleep, and clock_nanosleep Functions / 函数sleep,nanosleep和clock_nanosleep　373**
 
 **10．20　sigqueue Function / 函数sigqueue　376**
 
@@ -580,7 +615,7 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **Exercises　/ 习题　587**
 
-#### **Chapter　16． Network IPC： Sockets / 网络IPC：套接字　589**
+#### **Chapter　16． Network IPC: Sockets / 网络IPC:套接字　589**
 
 **16．1　Introduction / 引言　589**
 
@@ -620,9 +655,9 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **17．4　Passing File Descriptors / 传送文件描述符　642**
 
-**17．5　An Open Server， Version 1 / 打开服务器进程第 1版　653**
+**17．5　An Open Server, Version 1 / 打开服务器进程第 1版　653**
 
-**17．6　An Open Server， Version 2 / 打开服务器进程第 2版　659**
+**17．6　An Open Server, Version 2 / 打开服务器进程第 2版　659**
 
 **17．7　Summary / 小结　669**
 
@@ -654,7 +689,7 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 **18．12　Terminal Window Size / 终端窗口大小　710**
 
-**18．13　termcap， terminfo， and curses / termcap、terminfo和curses　712**
+**18．13　termcap, terminfo, and curses / termcap,terminfo和curses　712**
 
 **18．14　Summary / 小结　713**
 
@@ -730,4 +765,6 @@ UNIX编程版本 针对新技术改版 与Linux相结合的案例教程
 
 #### **Appendix　C． Solutions to Selected Exercises / 部分习题答案　905**
 
-**Bibliography　/ 参考书目　947**^ [1]^
+**Bibliography　/ 参考书目　947**
+
+> 编辑时间 2024年10月19日_v1900
