@@ -20,6 +20,19 @@ DIRS = lib intro sockets advio daemons datafiles db environ \
 default: help
 
 # -----------------------------------------------------------------------
+# 0_更新到最新版本
+0_更新到最新版本:
+	-@ [[ -f $$(which cloudstudio) ]] && git stash || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git branch --set-upstream-to=origin/wmstudy_cn wmstudy_cn           || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git switch wmstudy_cn || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git pull origin wmstudy_cn || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git switch cloudstudio_刚刚下拉 || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git pull origin wmstudy_cn || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git switch wmstudy_cn || exit 0
+
+# 这里是 0_更新到最新版本 的便捷方式
+0: 0_更新到最新版本
+# -----------------------------------------------------------------------
 
 .PHONY : all
 all:
@@ -33,9 +46,9 @@ all:
 	sudo cp lib/libapue.a /usr/lib
 
 .PHONY : init
-init:
-	-@ [[ -f $$(which cloudstudio) ]] && git checkout -b cloudstudio_刚刚下拉 || exit 0
-	-@bash 10.wmscript_init_this.sh
+# init:
+# 	-@ [[ -f $$(which cloudstudio) ]] && git checkout -b cloudstudio_刚刚下拉 || exit 0
+# 	-@bash 10.wmscript_init_this.sh
 
 
 # NOTE 这里给club增加一个独立的初始化快捷方式
@@ -93,6 +106,8 @@ help:
 	@echo -e "\t  --这样的方式对于初学者最为简洁^_&"
 	@echo -e "\t  --资深程序员请忽略本方式"
 	@echo -e "\n"
+	@echo -e "0_更新到最新版本"
+	@echo -e "  : 与git仓库同步最新内容(首先执行这里)"
 	@echo -e "9_check"
 	@echo -e "  : 判断是否处于cloudstudio工作空间中"
 	@echo -e "11_install_lib_for_club"
@@ -150,21 +165,48 @@ club: 11_install_lib_for_club
 
 # -----------------------------------------------------------------------
 
-.PHONY : 12_init_for_cloudstudio cs
+.PHONY : 12_init_for_cloudstudio_main 12_init_for_cloudstudio cs
 # 下面是别名
-12_init_for_cloudstudio: init
-	-@echo -e "$$(pwd)/Makefile wmtask_[2_init_for_cloudstudio]_目标_被运行\n"
+# 12_init_for_cloudstudio: init
+# 	-@echo -e "$$(pwd)/Makefile wmtask_[2_init_for_cloudstudio]_目标_被运行\n"
+# 	-@ [[ -f $$(which cloudstudio) ]] && git add -A || exit 0
+# 	-@ [[ -f $$(which cloudstudio) ]] && git commit -m "进入cloudstudio首次提交" || exit 0
+# 	-@ [[ -f $$(which cloudstudio) ]] && git checkout -b cloudstudio_运行中 || exit 0
+# 	-@ [[ -f $$(which cloudstudio) ]] && make build || exit 0
+# 	-@ [[ -f $$(which cloudstudio) ]] && make help  || exit 0
+# 	-@exit 0
+
+# 使用bash执行脚本_安装一下需要用到的软件
+12_init_for_cloudstudio_main:
+	-@echo -e "$$(pwd)/Makefile wmtask_[12_init_for_cloudstudio]_目标_被运行\n"
+	-@ [[ -f $$(which cloudstudio) ]] && git remote remove  origin  || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git remote add     origin https://cnb.cool/8888/c/linux_c.git || exit 0
+	@# -@ [[ -f $$(which cloudstudio) ]] && git remote add     cnb    https://cnb.cool/8888/c/linux_c.git || exit 0
+	@# -@ [[ -f $$(which cloudstudio) ]] && git remote add     github https://github.com/coding-net-cloud-studio/linux_c.git || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git checkout -b cloudstudio_刚刚下拉 || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && touch README.md
 	-@ [[ -f $$(which cloudstudio) ]] && git add -A || exit 0
 	-@ [[ -f $$(which cloudstudio) ]] && git commit -m "进入cloudstudio首次提交" || exit 0
 	-@ [[ -f $$(which cloudstudio) ]] && git checkout -b cloudstudio_运行中 || exit 0
-	-@ [[ -f $$(which cloudstudio) ]] && make build || exit 0
-	-@ [[ -f $$(which cloudstudio) ]] && make help  || exit 0
-	-@exit 0
+	@# -@ [[ -f $$(which cloudstudio) ]] && git branch --set-upstream-to=origin/wmstudy_cn cloudstudio_运行中    || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git branch --set-upstream-to=origin/wmstudy_cn cloudstudio_刚刚下拉  || exit 0
+	-@ [[ -f $$(which cloudstudio) ]] && git branch --set-upstream-to=origin/wmstudy_cn wmstudy_cn           || exit 0
+	-@bash 10.wmscript_init_this.sh || exit 0
+	-@make  23_build_all
+	-@clear
+	-@make help
+
+12_init_for_cloudstudio: 12_init_for_cloudstudio_main 0_更新到最新版本
+	-@clear
+	-@make help
 
 # 下面是别名
-cs: init
-	-@echo -e "$$(pwd)/Makefile wmtask_[2_init_for_cloudstudio]_目标_被运行\n"
-	-@exit 0
+# cs: init
+# 	-@echo -e "$$(pwd)/Makefile wmtask_[2_init_for_cloudstudio]_目标_被运行\n"
+# 	-@exit 0
+
+# 快捷名称
+cs: 12_init_for_cloudstudio
 
 # -----------------------------------------------------------------------
 
