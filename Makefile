@@ -165,7 +165,7 @@ club: 11_install_lib_for_club
 
 # -----------------------------------------------------------------------
 
-.PHONY : 12_init_for_cloudstudio_main 12_init_for_cloudstudio cs
+.PHONY : nb12_init_for_cloudstudio_main 12_init_for_cloudstudio cs
 # 下面是别名
 # 12_init_for_cloudstudio: init
 # 	-@echo -e "$$(pwd)/Makefile wmtask_[2_init_for_cloudstudio]_目标_被运行\n"
@@ -177,7 +177,7 @@ club: 11_install_lib_for_club
 # 	-@exit 0
 
 # 使用bash执行脚本_安装一下需要用到的软件
-12_init_for_cloudstudio_main:
+nb12_init_for_cloudstudio_main:
 	-@echo -e "$$(pwd)/Makefile wmtask_[12_init_for_cloudstudio]_目标_被运行\n"
 	-@ [[ -f $$(which cloudstudio) ]] && git remote remove  origin  || exit 0
 	-@ [[ -f $$(which cloudstudio) ]] && git remote add     origin https://cnb.cool/8888/c/linux_c.git || exit 0
@@ -196,7 +196,7 @@ club: 11_install_lib_for_club
 	-@clear
 	-@make help
 
-12_init_for_cloudstudio: 12_init_for_cloudstudio_main 0_更新到最新版本
+12_init_for_cloudstudio: nb12_init_for_cloudstudio_main 0_更新到最新版本
 	-@clear
 	-@make help
 
