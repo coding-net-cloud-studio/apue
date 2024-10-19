@@ -61,34 +61,74 @@ clean:
 
 # -----------------------------------------------------------------------
 
+# help:
+# 	@echo -e "\n"
+# 	@echo -e "\033[33m 使用帮助: \033[0m"
+# 	@echo -e "\n"
+# 	@echo -e "\033[33m 欢迎来到_考研_学习笔记_的世界 \033[0m"
+# 	@echo -e "\n"
+# 	@echo -e "特别提示: 先输入make 再选择数字 接着按键盘左上角的Tab键 可以自动完成输入"
+# 	@echo -e "\t  --这样的方式对于初学者最为简洁^_&"
+# 	@echo -e "\t  --资深程序员请忽略本方式"
+# 	@echo -e "\n"
+# 	@echo -e "make 9_check                                   : 判断是否处于cloudstudio工作空间中"
+# 	@echo -e "make 11_install_lib_for_club                   : 本目标只是在club教程中运行_快速安装构建需要用到的几个库"
+# 	@echo -e "make 12_init_for_cloudstudio                   : 本目标只是在cloudstudio工作空间中运行_只需要运行1次就可以了"
+# 	@echo -e "make 23_build_all                              : 开始干活_构建本_考研_学习笔记_的所有源文件"
+# 	@echo -e "make 4_查看构建结果                            : 查看查看_查看是否已经构建出可执行文件"
+# 	@echo -e "make 5_show                                    : 用git clean -xdf -n 查看是否已经构建出可执行文件"
+# 	@echo -e "make 6_show_executable                         : 用find命令查找已经构建出的可执行文件"
+# 	@echo -e "make 7_clean_all                               : 打扫卫生_清除上面构建出来的所有可执行目标文件"
+# 	@echo -e "\n\n"
+# 	@exit 0
+
 help:
 	@echo -e "\n"
-	@echo -e "\033[33m 使用帮助: \033[0m"
-	@echo -e "\n"
+	@echo -e "\033[33m Makefile 帮助信息 \033[0m"
 	@echo -e "\033[33m 欢迎来到_考研_学习笔记_的世界 \033[0m"
 	@echo -e "\n"
-	@echo -e "特别提示: 先输入make 再选择数字 接着按键盘左上角的Tab键 可以自动完成输入"
+	@echo -e "特别提示: 先输入make 再选择数字"
+	@echo -e "         接着按键盘左上角的Tab键"
+	@echo -e "         可以自动完成输入"
 	@echo -e "\t  --这样的方式对于初学者最为简洁^_&"
 	@echo -e "\t  --资深程序员请忽略本方式"
 	@echo -e "\n"
-	@echo -e "make 0_check                                   : 判断是否处于cloudstudio工作空间中"
-	@echo -e "make 11_install_lib_for_club                   : 本目标只是在club教程中运行_快速安装构建需要用到的几个库"
-	@echo -e "make 12_init_for_cloudstudio                   : 本目标只是在cloudstudio工作空间中运行_只需要运行1次就可以了"
-	@echo -e "make 23_build_all                              : 开始干活_构建本_考研_学习笔记_的所有源文件"
-	@echo -e "make 4_查看构建结果                            : 查看查看_查看是否已经构建出可执行文件"
-	@echo -e "make 5_show                                    : 用git clean -xdf -n 查看是否已经构建出可执行文件"
-	@echo -e "make 6_show_executable                         : 用find命令查找已经构建出的可执行文件"
-	@echo -e "make 7_clean_all                               : 打扫卫生_清除上面构建出来的所有可执行目标文件"
-	@echo -e "\n\n"
+	@echo -e "9_check"
+	@echo -e "  : 判断是否处于cloudstudio工作空间中"
+	@echo -e "11_install_lib_for_club"
+	@echo -e "  : 本目标只是在club教程中运行"
+	@echo -e "    快速安装构建需要用到的几个库"
+	@echo -e "12_init_for_cloudstudio"
+	@echo -e "  : 本目标只是在cloudstudio工作空间中运行"
+	@echo -e "    只需要运行1次就可以了"
+	@echo -e "23_build_all"
+	@echo -e "  : 开始干活_构建本_考研_学习笔记_的所有源文件"
+	@echo -e "4_查看构建结果"
+	@echo -e "  : 查看查看_查看是否已经构建出可执行文件"
+	@echo -e "5_show"
+	@echo -e "  : 用git clean -xdf -n"
+	@echo -e "    查看是否已经构建出可执行文件"
+	@echo -e "6_show_executable"
+	@echo -e "  : 用find命令查找已经构建出的可执行文件"
+	@echo -e "7_clean_all"
+	@echo -e "  : 打扫卫生"
+	@echo -e "    清除上面构建出来的所有可执行目标文件"
+	@echo -e "\n"
+	@echo "示例命令:"
+	@echo "make: 构建项目"
+	@echo "make  7_clean_all"
+	@echo "        : 清理生成的文件"
+	@echo "make  help"
+	@echo "        : 显示此帮助信息"
 	@exit 0
 
 # -----------------------------------------------------------------------
 # bash - Makefile中的基本if else语句
 # https://www.coder.work/article/7542462
-.PHONY : 0_check
-# REVIEW 0_check 这里是真实的定义
-0_check:
-	@echo -e "$$(pwd)/Makefile wmtask_[0_check]_目标_被运行\n"
+.PHONY : 9_check
+# REVIEW 9_check 这里是真实的定义
+9_check:
+	@echo -e "$$(pwd)/Makefile wmtask_[9_check]_目标_被运行\n"
 	@if [ $$(which cloudstudio) ]; then \
 		echo "位于cloudstudio工作空间中"; \
 	else \
