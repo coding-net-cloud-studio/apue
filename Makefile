@@ -38,7 +38,7 @@ default: help
 all:
 	@# wmtag_memo_我修改了这里_开始
 	@# 安装了点需要用的软件与库文件
-	-@bash 10.wmscript_init_this.sh
+	-@bash ab10_wmscript_init_this.sh
 	@# wmtag_memo_我修改了这里_结束
 	for i in $(DIRS); do \
 		(cd $$i && echo "making $$i" && $(MAKE) ) || exit 1; \
@@ -48,7 +48,7 @@ all:
 .PHONY : init
 # init:
 # 	-@ [[ -f $$(which cloudstudio) ]] && git checkout -b cloudstudio_刚刚下拉 || exit 0
-# 	-@bash 10.wmscript_init_this.sh
+# 	-@bash ab10_wmscript_init_this.sh
 
 
 # NOTE 这里给club增加一个独立的初始化快捷方式
@@ -191,7 +191,7 @@ club: 11_install_lib_for_club
 	@# -@ [[ -f $$(which cloudstudio) ]] && git branch --set-upstream-to=origin/wmstudy_cn cloudstudio_运行中    || exit 0
 	-@ [[ -f $$(which cloudstudio) ]] && git branch --set-upstream-to=origin/wmstudy_cn cloudstudio_刚刚下拉  || exit 0
 	-@ [[ -f $$(which cloudstudio) ]] && git branch --set-upstream-to=origin/wmstudy_cn wmstudy_cn           || exit 0
-	-@bash 10.wmscript_init_this.sh || exit 0
+	-@bash ab10_wmscript_init_this.sh || exit 0
 	-@make  23_build_all
 	-@clear
 	-@make help
