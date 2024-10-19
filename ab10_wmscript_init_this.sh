@@ -241,35 +241,58 @@ f27_38_install_some_vs_ext_quick(){
 
 # 安装一些ubuntu环境下的_需要用到的_软件
 f33_install_common_software_quick(){
+	if [[ -f $(which cloudstudio) ]]; then
+		if [[ ! -f $(which wc24_cc28_cloudstudio_installed.sh) ]]; then
+			apt update -y
+			DEBIAN_FRONTEND='noninteractive' apt install -y \
+				iputils-ping \
+				sudo \
+				make \
+				tree \
+				curl \
+				lsof \
+				net-tools \
+				psmisc \
+				file \
+				lsof \
+				htop \
+				direnv \
+				rsync \
+				curl \
+				direnv \
+				sqlite3 \
+				libsqlite3-dev \
+				sshfs \
+				jq \
+				aria2 \
+				lynx \
+				hugo \
+				flex \
+				jq \
+				gron \
+				pdfgrep \
+				ripgrep \
+				httpie \
+				pv \
+				tree \
+				gdb \
+				gdbserver \
+				bison \
+				nasm \
+				bear \
+				strace
 
-	apt update
+			# NOTE 执行完成安装任务以后_创建_锁文件
+			echo "echo 已经初始化了本cloudstudio工作空间 $(date)" >> /usr/bin/wc24_cc28_cloudstudio_installed.sh
+			chmod +x /usr/bin/wc24_cc28_cloudstudio_installed.sh
+		fi
 
-	DEBIAN_FRONTEND='noninteractive' apt install -y \
-		sudo \
-		tree \
-		curl \
-		net-tools \
-		lsof \
-		htop \
-		direnv \
-		rsync \
-		sshfs \
-		jq \
-		aria2 \
-		lynx \
-		hugo \
-		flex \
-		make \
-		gdb \
-		gdbserver \
-		bison \
-		nasm \
-		bear \
-		strace
-
-		# DEBIAN_FRONTEND='noninteractive' apt install -y rkhunter unhide sshpass
+	fi
 
 	return 0
+
+# DEBIAN_FRONTEND='noninteractive' apt install -y rkhunter unhide sshpass
+
 }
 
 f36_install_gcc_10_versioin(){
