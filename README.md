@@ -6,11 +6,11 @@
 
 [美]W. 理查德·史蒂文斯(W. Richard Stevens)史蒂芬·A. 拉戈( Stephen A. Rago)
 
-**本书内容概念清晰,阐述精辟,对于“想到北京求职高薪售前工程师”的同学均可适用.**
+**本书内容概念清晰,阐述精辟,对于"想到北京求职高薪售前工程师"的同学均可适用.**
 
 ```bash
 Makefile 帮助信息 v2000_id_2016 :
-提交id_v2080
+提交id_v2090
 
 0_更新到最新版本
   : 与git仓库同步最新内容(首先执行这里)
@@ -49,6 +49,8 @@ Makefile 帮助信息 v2000_id_2016 :
 "我自学,我自讲" 侧重在:
 
     智谱ChatGLM3大模型,腾讯云HAI高性能计算平台上,如何与ollama相互配合与互动的模式下,实现该大模型的本地化部署,应用开发与微调.
+
+    并将使用智谱AI的bigmodel.cn的各种大模型全家桶,创作"基于python语言开发的智能体".
 
 这里是本系列分享的第cb01个文章与cloudstudio应用:
 
@@ -797,4 +799,4 @@ Please direct questions, suggestions, and bug reports to sar@apuebook.com.
 Steve Rago
 January 2013
 
-> 编辑时间 2024年10月20日_v2080
+> 编辑时间 2024年10月20日_v2090
