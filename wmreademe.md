@@ -1,4 +1,5 @@
 #### 目的与内容
+
 > 这里是我自己的一个学习笔记.
 > 我把自己的学习笔记开源了.
 > 希望给广大的考研学子有点帮助.
@@ -8,14 +9,16 @@
 #### 如何批量格式化c语言的源代码
 
 ##### 主要参考
+
 [VScode使用clang format文档自动代码格式化(C语言)](https://blog.csdn.net/weixin_42217191/article/details/129516325)
 
-
 ##### 批量格式化 vscode扩展format files
+
 [vscode 批量格式化 扩展 format files 市场链接] (https://marketplace.visualstudio.com/items?itemName=jbockle.jbockle-format-files&ssr=false#overview)
 [vscode 批量格式化](https://blog.csdn.net/userkang/article/details/94436433)
 
 ##### Astyle
+
 [Astyle 官网](https://astyle.sourceforge.net/)
 [Astyle 下载地址](https://sourceforge.net/projects/astyle/)
 [Astyle 中文介绍](https://baike.baidu.com/item/Astyle)
@@ -25,11 +28,12 @@
 ##### 以后尝试_有潜力的项目
 
 ###### format-files-by-ignores
+
 [xiaohuohumax csdn文章](https://blog.csdn.net/qq_41959923/article/details/136979471)
 [git仓库](https://github.com/xiaohuohumax/format-files-by-ignores#readme)
 [vscode 插件市场](https://marketplace.visualstudio.com/items?itemName=xiaohuohumax.format-files-by-ignores)
 [vscode离线安装插件提示版本不兼容,安装失败的处理方法](https://blog.csdn.net/weixin_63712639/article/details/131600261)
-[这里指定了 "vscode": "^1.87.0"](https://github.com/xiaohuohumax/format-files-by-ignores/blob/main/package.json)
+[这里指定了 &#34;vscode&#34;: &#34;^1.87.0&#34;](https://github.com/xiaohuohumax/format-files-by-ignores/blob/main/package.json)
 [插件的readme](https://github.com/xiaohuohumax/format-files-by-ignores#readme)
 
 [实用浏览器书签脚本集合 Bookmarklets](https://github.com/xiaohuohumax/bookmark-script)
@@ -42,13 +46,21 @@
 [替换/修改 yml 配置文件的信息到新文件,比如:数据库账号,密码等](https://github.com/xiaohuohumax/yml-format)
 [利用Github Pages,Issue,Label,Github API搭建简单个人博客,笔记记录网站](https://blog.csdn.net/qq_41959923/article/details/135338028)
 
-
-
 ##### 其他文章
+
 [使用clang-format格式化c++代码](https://blog.csdn.net/Lucy_stone/article/details/135184576)
 
+#### 问题列表:
 
+##### clangd从github下载后继的zip速度慢的问题
 
+>
+> The 'clangd' language server was not found on your PATH.
+>
+> Would you like to download and install clangd 18.1.3?
+>
+[clangd的github地址](https://github.com/clangd/clangd/releases?q=18.1.3&expanded=true)
+[vscode_clangd](https://github.com/clangd/vscode-clangd/releases)
 
 #### 下面是原始仓库的readme内容
 

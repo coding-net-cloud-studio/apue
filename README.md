@@ -784,4 +784,19 @@ Makefile 帮助信息 v2000_id_2016 :
 
 **Bibliography　/ 参考书目　947**
 
-> 编辑时间 2024年10月20日_v2060
+
+#### 下面是原始仓库的readme内容
+
+Read the file called DISCLAIMER.
+
+On Freebsd, type "gmake".
+On other platforms, type "make" (as long as this is gnu make).
+
+For FAQs, updated source code, and the lost chapter, see http://www.apuebook.com.
+Please direct questions, suggestions, and bug reports to sar@apuebook.com.
+
+Steve Rago
+January 2013
+
+
+> 编辑时间 2024年10月20日_v2070
