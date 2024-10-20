@@ -131,10 +131,10 @@ help:
 	@echo -e "\n"
 	@echo "示例命令:"
 	@echo "make: 构建项目"
-	@echo "make  7_clean_all"
+	@echo "make 23_build_all"
+	@echo "        :构建linux环境的c源代码(优选本项)"
+	@echo "make 7_clean_all"
 	@echo "        : 清理生成的文件"
-	@echo "make  help"
-	@echo "        : 显示此帮助信息"
 	@exit 0
 
 # -----------------------------------------------------------------------
