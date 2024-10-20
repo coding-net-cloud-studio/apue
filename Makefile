@@ -179,6 +179,8 @@ club: 11_install_lib_for_club
 # 使用bash执行脚本_安装一下需要用到的软件
 nb12_init_for_cloudstudio_main:
 	-@echo -e "$$(pwd)/Makefile wmtask_[12_init_for_cloudstudio]_目标_被运行\n"
+	-@git config --global user.email "cloudstudio_my_study@qq.com"
+	-@git config --global user.name "cloudstudio_my_study"
 	-@ [[ -f $$(which cloudstudio) ]] && git remote remove  origin  || exit 0
 	-@ [[ -f $$(which cloudstudio) ]] && git remote add     origin https://cnb.cool/8888/c/apue.git || exit 0
 	@# -@ [[ -f $$(which cloudstudio) ]] && git remote add     cnb    https://cnb.cool/8888/c/apue.git || exit 0
