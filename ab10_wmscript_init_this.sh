@@ -152,7 +152,7 @@ f27_38_install_some_vs_ext_quick(){
 		# 安装ut8变量与函数名的_中文输入助手_vscode扩展_是_吴烜(xuan三声)领导下开源的vscode扩展
 		# 属于中文代码快速补全
 		# 开源的git仓库地址如下 https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant.git
-		# 位置大体类似 .vscode/ext10_CodeInChinese.ChineseInputAssistant-1.5.8.vsix
+		# 位置大体类似 .vscode/ext10_v010510_CodeInChinese.ChineseInputAssistant-1.5.10.vsix
 		if [[ $(find .vscode/ -name '*CodeInChinese.ChineseInputAssistant*.vsix'| wc -l) -gt 0 ]]; then
 			# 提取出CodeInChinese.ChineseInputAssistant扩展的文件名称
 			wmvar26_30_code_runner_file_name=$(basename $(find .vscode/ -name '*CodeInChinese.ChineseInputAssistant*.vsix'| sort -V | tail -n 2 | head -n 1))

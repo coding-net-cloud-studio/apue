@@ -2,14 +2,14 @@
 
 [本书在人民邮电出版社的介绍](https://www.ptpress.com.cn/shopping/buy?bookId=b14ca98e-9fb3-464a-8563-cc6ec8aa7505) [电子工业出版社京东自营官方旗舰店 本书购买链接](https://item.jd.com/14186183.html)
 
-[![Cloud Studio Template](https://cs-res.codehub.cn/common/assets/icon-badge.svg)](https://cloudstudio.net/a/22190303708839936?channel=share&sharetype=Markdown)
+[![Cloud Studio Template](https://cs-res.codehub.cn/common/assets/icon-badge.svg)](https://cloudstudio.net/a/22191412615708672?channel=share&sharetype=Markdown)
 
 [美]W. 理查德·史蒂文斯(W. Richard Stevens)史蒂芬·A. 拉戈( Stephen A. Rago)
 
 **本书内容概念清晰,阐述精辟,对于所有层次UNIX/Linux程序员均可适用.**
 
 ```bash
-Makefile 帮助信息 v1970 :
+Makefile 帮助信息 v1990_id_8672 :
 
 make 0_check                  : 判断是否处于cloudstudio工作空间中
 make 11_install_lib_for_club  : 本目标只是在club教程中运行_快速安装构建需要用到的几个库
@@ -769,4 +769,4 @@ make 7_clean_all              : 打扫卫生_清除上面构建出来的所有�
 
 **Bibliography　/ 参考书目　947**
 
-> 编辑时间 2024年10月19日_v1900
+> 编辑时间 2024年10月20日_v2000
