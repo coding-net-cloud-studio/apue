@@ -112,7 +112,7 @@ f27_38_install_some_vs_ext_quick(){
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-python.python   					--force
 
 	# NOTE 这里是为了apue,linux_c等增加的cpp的扩展(ms-cpptools好像是没有发挥作用_原因未知)
-	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  llvm-vs-code-extensions.vscode-clangd --force
+	[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  llvm-vs-code-extensions.vscode-clangd --force
 
 
 	# 下面的来自openvsx社区的jupyter破裂了只能手工的安装
@@ -125,6 +125,17 @@ f27_38_install_some_vs_ext_quick(){
 	# 下面的无法通过插件市场简单的安装上去了
 	# [[ -f $(which cloudstudio) ]] && cloudstudio --install-extension  ms-vscode.cpptools                 --force
 	# 代替为如下的简单方法
+
+	# 安装首先安装韩俊大神的插件的vscode扩展
+	# 位置大体类似 .vscode/b18.首先安装韩俊大神的插件.code-runner-0.12.2.vsix
+	if [[ $(find .vscode/ -name '*code-runner*.vsix'| wc -l) -gt 0 ]]; then
+		# 提取出code-runner扩展的文件名称
+		wmvar26_20_code_runner_file_name=$(basename $(find .vscode/ -name '*code-runner*.vsix'| sort -V | tail -n 2 | head -n 1))
+		# 判断是否是cloudstudio的环境
+		[[ -f $(which cloudstudio) ]] && cloudstudio --install-extension $(pwd)/.vscode/${wmvar26_20_code_runner_file_name} --force
+	else
+		echo "没有找到随着本git仓库携带的_code-runner_扩展"
+	fi
 
 	if [[ -f $(which cloudstudio) ]]; then
 		# 安装c与c++的调试vscode扩展
