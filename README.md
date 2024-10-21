@@ -34,6 +34,8 @@ Makefile 帮助信息 v2000_id_2016 :
 7_clean_all
   : 打扫卫生
     清除上面构建出来的所有可执行目标文件
+ 8_安装本仓库需要用的vscode扩展
+   : 安装本仓库需要用的vscode扩展
 ```
 
 ![本书图片](wmimages/wc24_c28_book.png)

@@ -128,6 +128,8 @@ help:
 	@echo -e "7_clean_all"
 	@echo -e "  : 打扫卫生"
 	@echo -e "    清除上面构建出来的所有可执行目标文件"
+	@echo -e "8_安装本仓库需要用的vscode扩展"
+	@echo -e "  : 安装本仓库需要用的vscode扩展"
 	@echo -e "\n"
 	@echo "示例命令:"
 	@echo "make: 构建项目"
@@ -253,5 +255,18 @@ cs: 12_init_for_cloudstudio
 
 # 下面是一个备用的语句
 # -@ [[ ! -f $$(which cloudstudio) ]] && [[ -d ./cf_figlinks/ ]] && cd cf_figlinks/ && find  . -type f -executable -exec rm {} \;
+
+# -----------------------------------------------------------------------
+
+ab08_install_vscode_extensions:
+	-@clear
+	-@ [[ -f $$(which cloudstudio) ]] && bash ab10_wmscript_init_this.sh f27_38_install_some_vs_ext_quick || exit 0
+
+
+8_安装本仓库需要用的vscode扩展: ab08_install_vscode_extensions
+
+vscode: 8_安装本仓库需要用的vscode扩展
+
+.PHONY: vscode 8_安装本仓库需要用的vscode扩展 ab08_install_vscode_extensions
 
 # -----------------------------------------------------------------------
