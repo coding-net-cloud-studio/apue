@@ -1,4 +1,4 @@
-## UNIX环境高级编程 第3版-请立即点赞
+# UNIX环境高级编程 第3版-腾讯AI编程助手增加注释 [边学边练](https://cloudstudio.net/) 请点赞
 
 [本书在人民邮电出版社的介绍](https://www.ptpress.com.cn/shopping/buy?bookId=b14ca98e-9fb3-464a-8563-cc6ec8aa7505) [电子工业出版社京东自营官方旗舰店 本书购买链接](https://item.jd.com/14186183.html)
 
